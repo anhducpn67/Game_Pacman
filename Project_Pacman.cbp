@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Project_Pacman" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/Project_Pacman" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-std=c++14" />
+					<Add option="-g" />
+					<Add directory="ExtendedLib/SDL2_image-2.0.5/i686-w64-mingw32/include/SDL2" />
+					<Add directory="ExtendedLib/SDL2-2.0.12/i686-w64-mingw32/include/SDL2" />
+					<Add directory="ExtendedLib/SDL2_ttf-2.0.15/i686-w64-mingw32/include/SDL2" />
+				</Compiler>
+				<Linker>
+					<Add option="-lmingw32 -lSDL2main -lSDL2" />
+					<Add option="-lSDL2_image" />
+					<Add option="-lSDL2_ttf" />
+					<Add directory="ExtendedLib/SDL2_image-2.0.5/i686-w64-mingw32/lib" />
+					<Add directory="ExtendedLib/SDL2-2.0.12/i686-w64-mingw32/lib" />
+					<Add directory="ExtendedLib/SDL2_ttf-2.0.15/i686-w64-mingw32/lib" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/Project_Pacman" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+		</Compiler>
+		<Unit filename="InitCloseSDL.cpp" />
+		<Unit filename="InitCloseSDL.h" />
+		<Unit filename="LTexture.cpp" />
+		<Unit filename="LTexture.h" />
+		<Unit filename="creatWallandPoint.cpp" />
+		<Unit filename="creatWallandPoint.h" />
+		<Unit filename="externVariables.h" />
+		<Unit filename="ghost.cpp" />
+		<Unit filename="ghost.h" />
+		<Unit filename="mainGame.cpp" />
+		<Unit filename="pacman.cpp" />
+		<Unit filename="pacman.h" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

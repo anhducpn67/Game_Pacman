@@ -1,0 +1,53 @@
+#ifndef PACMAN_H
+#define PACMAN_H
+
+#include <SDL.h>
+#include <SDL_image.h>
+#include <stdio.h>
+#include <SDL_ttf.h>
+
+using namespace std;
+
+class Pacman
+{
+    public:
+		//The dimensions of Pacman
+		static const int PACMAN_WIDTH = 40;
+		static const int PACMAN_HEIGHT = 40;
+
+		//Maximum axis velocity of Pacman
+		static const int PACMAN_VEL = 3;
+
+		// Direct
+		int direct = 0;
+
+		// Frames;
+		int frames = 0;
+
+		//Initializes the variables
+		Pacman();
+
+		//Handle keyboard's events
+		void handleEvent( SDL_Event& e );
+
+		//Moves Pacman
+        void move( SDL_Rect wall[], int numbers_Wall);
+
+		//Shows Pacman on the screen
+		void render();
+
+		//Pacman's collision box
+        SDL_Rect mCollider;
+
+    private:
+		//The X and Y offsets of Pacman
+		int mPosX, mPosY;
+
+		//The velocity of the Pacman
+		int mVelX, mVelY;
+};
+
+bool checkCollision( SDL_Rect& a, SDL_Rect& b );
+void getPacmanAnimation();
+
+#endif // PACMAN_H
