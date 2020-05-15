@@ -21,6 +21,4 @@ void RenderGame()
     for (int i = 1; i <= 4; i++)
         ghost[i].render(i - 1);
 
-    //Update screen
-    SDL_RenderPresent( gRenderer );
 }

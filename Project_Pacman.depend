@@ -706,7 +706,7 @@
 
 1587568579 D
 
-1589538819 source:c:\users\anhduc\desktop\study\ltnc\project_pacman\pacman.cpp
+1589539293 source:c:\users\anhduc\desktop\study\ltnc\project_pacman\pacman.cpp
 	"pacman.h"
 	"externVariables.h"
 
@@ -726,7 +726,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1589539194 source:c:\users\anhduc\desktop\study\ltnc\project_pacman\ltexture.cpp
+1589539293 source:c:\users\anhduc\desktop\study\ltnc\project_pacman\ltexture.cpp
 	"LTexture.h"
 
 1589508653 c:\users\anhduc\desktop\study\ltnc\project_pacman\ltexture.h
@@ -736,19 +736,20 @@
 	<stdio.h>
 	<SDL_ttf.h>
 
-1589538734 c:\users\anhduc\desktop\study\ltnc\project_pacman\externvariables.h
+1589539293 c:\users\anhduc\desktop\study\ltnc\project_pacman\externvariables.h
 	"LTexture.h"
 	"pacman.h"
 	"ghost.h"
 
-1589538594 source:c:\users\anhduc\desktop\study\ltnc\project_pacman\maingame.cpp
+1589547684 source:c:\users\anhduc\desktop\study\ltnc\project_pacman\maingame.cpp
 	"LTexture.h"
 	"pacman.h"
 	"creatWallandPoint.h"
 	"InitCloseSDL.h"
 	"externVariables.h"
+	"renderGame.h"
 
-1589537982 c:\users\anhduc\desktop\study\ltnc\project_pacman\pacman.h
+1589539293 c:\users\anhduc\desktop\study\ltnc\project_pacman\pacman.h
 	<SDL.h>
 	<SDL_image.h>
 	<stdio.h>
@@ -764,11 +765,11 @@
 	<stdio.h>
 	<SDL_ttf.h>
 
-1589537938 source:c:\users\anhduc\desktop\study\ltnc\project_pacman\ghost.cpp
+1589539293 source:c:\users\anhduc\desktop\study\ltnc\project_pacman\ghost.cpp
 	"ghost.h"
 	"externVariables.h"
 
-1589537988 c:\users\anhduc\desktop\study\ltnc\project_pacman\ghost.h
+1589539293 c:\users\anhduc\desktop\study\ltnc\project_pacman\ghost.h
 	<SDL.h>
 	<SDL_image.h>
 	<stdio.h>
@@ -780,7 +781,7 @@
 	"creatWallandPoint.h"
 	"externVariables.h"
 
-1589538977 source:c:\users\anhduc\desktop\study\ltnc\project_pacman\initclosesdl.cpp
+1589539293 source:c:\users\anhduc\desktop\study\ltnc\project_pacman\initclosesdl.cpp
 	"InitCloseSDL.h"
 	"externVariables.h"
 
@@ -790,11 +791,11 @@
 	<stdio.h>
 	<SDL_ttf.h>
 
-1589539155 source:c:\users\anhduc\desktop\study\ltnc\project_pacman\rendergame.cpp
+1589545854 source:c:\users\anhduc\desktop\study\ltnc\project_pacman\rendergame.cpp
 	"renderGame.h"
 	"externVariables.h"
 
-1589539124 c:\users\anhduc\desktop\study\ltnc\project_pacman\rendergame.h
+1589539293 c:\users\anhduc\desktop\study\ltnc\project_pacman\rendergame.h
 	<SDL.h>
 	<SDL_image.h>
 	<stdio.h>
