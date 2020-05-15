@@ -50,7 +50,6 @@ bool init()
 			}
 		}
 	}
-
 	return success;
 }
 
@@ -62,7 +61,13 @@ bool loadMedia()
 	//Load texture pacman and ghost
 	if( !sprites.loadFromFile( "Images/sprites2.png" ) )
 	{
-		printf( "Failed to load dot texture!\n" );
+		printf( "Failed to load sprites texture!\n" );
+		success = false;
+	}
+	 //Load Background
+	 if( !background.loadFromFile("Images/background.jpg") )
+	{
+		printf( "Failed to load background texture!\n" );
 		success = false;
 	}
 	return success;
@@ -72,6 +77,7 @@ void close()
 {
 	//Free loaded images
 	sprites.free();
+    background.free();
 
 	//Destroy window
 	SDL_DestroyRenderer( gRenderer );

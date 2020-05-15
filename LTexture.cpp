@@ -6,8 +6,14 @@ SDL_Window* gWindow = NULL;
 //The window renderer
 SDL_Renderer* gRenderer = NULL;
 
+// Background
+LTexture background;
+
 //Pacman and ghost Texture
 LTexture sprites;
+
+//Frames
+int frames = 0;
 
 LTexture::LTexture()
 {
@@ -133,7 +139,6 @@ void LTexture::setAlpha( Uint8 alpha )
 void LTexture::render( int x, int y, SDL_Rect* clip, double angle, SDL_Point* center, SDL_RendererFlip flip )
 {
 	//Set rendering space and render to screen
-	//SDL_Rect renderQuad = { x, y, mWidth, mHeight };
     SDL_Rect renderQuad = { x, y, mWidth, mHeight };
 	//Set clip rendering dimensions
 	if( clip != NULL )
@@ -141,7 +146,6 @@ void LTexture::render( int x, int y, SDL_Rect* clip, double angle, SDL_Point* ce
 		renderQuad.w = clip->w;
 		renderQuad.h = clip->h;
 	}
-
 	//Render to screen
 	SDL_RenderCopyEx( gRenderer, mTexture, clip, &renderQuad, angle, center, flip );
 }

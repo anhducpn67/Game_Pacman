@@ -19,9 +19,6 @@ class Ghost
 		// Direct
 		int direct = 0;
 
-		// Frames;
-		int frames = 0;
-
 		// Check if ghost is blocked;
 		bool isBlock = false;
 
@@ -35,7 +32,7 @@ class Ghost
         void move( SDL_Rect wall[], int numbers_Wall);
 
 		//Shows the Ghost on the screen
-		void render();
+		void render(int ghosti);
 
 		//Ghost's collision box
         SDL_Rect mCollider;

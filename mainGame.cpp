@@ -1,8 +1,9 @@
 #include "LTexture.h"
 #include "pacman.h"
 #include "creatWallandPoint.h"
-#include "externVariables.h"
 #include "InitCloseSDL.h"
+#include "externVariables.h"
+#include "renderGame.h"
 
 using namespace std;
 
@@ -34,10 +35,6 @@ int main( int argc, char* args[] )
     getPacmanAnimation();
     getGhostAnimation();
 
-    //Load Background
-    LTexture background;
-    background.loadFromFile("Images/background.jpg");
-
     //Game loop
     while( !quit )
     {
@@ -62,25 +59,7 @@ int main( int argc, char* args[] )
             ghost[i].handleEvent();
         }
 
-        //Clear screen
-        SDL_SetRenderDrawColor( gRenderer, 0, 0, 0, 255 );
-        SDL_RenderClear( gRenderer );
-
-        //Render wall
-        for (int i = 1; i <= numbers_Wall; i++)
-            SDL_RenderDrawRect( gRenderer, &wall[i] );
-
-        //Render background
-        background.render(0, 0);
-
-        //Render Pacman
-        pacman.render();
-
-        // Render Ghost
-        for (int i = 1; i <= 4; i++)
-            ghost[i].render();
-
-        //Pacman hit Ghost
+        //Check if pacman hit Ghost
         for (int i = 1; i <= 4; i++)
         {
             int numbersPixel = 20;
@@ -97,16 +76,16 @@ int main( int argc, char* args[] )
             }
         }
 
+        //Render Game
+        RenderGame();
+
         // Update frames;
-        pacman.frames++;
+        frames++;
 
-        if( pacman.frames / 4 >= 4 )
+        if(frames / 4 >= 4 )
         {
-            pacman.frames = 0;
+            frames = 0;
         }
-
-        //Update screen
-        SDL_RenderPresent( gRenderer );
 
         // End game
         if (quit == true)

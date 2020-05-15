@@ -31,25 +31,25 @@ void Ghost::handleEvent()
         direct = rand() % 4;
     switch(direct)
     {
-        case 3:
+        case Up:
         {
             mVelY = -GHOST_VEL;
             mVelX = 0;
             break;
         }
-        case 1:
+        case Down:
         {
             mVelY = GHOST_VEL;
             mVelX = 0;
             break;
         }
-        case 2:
+        case Left:
         {
             mVelX = -GHOST_VEL;
             mVelY = 0;
             break;
         }
-        case 0:
+        case Right:
         {
             mVelX = GHOST_VEL;
             mVelY = 0;
@@ -101,13 +101,27 @@ SDL_Rect ghostAnimation[4][4][4];
 
 void getGhostAnimation()
 {
-    ghostAnimation[0][0][0].x = 0;
-    ghostAnimation[0][0][0].y = 0;
-    ghostAnimation[0][0][0].w = 50;
-    ghostAnimation[0][0][0].h = 50;
+    ghostAnimation[0][Right][0].x = 0;  ghostAnimation[0][Right][0].y = 0;      ghostAnimation[0][Right][0].w = 50;     ghostAnimation[0][Right][0].h = 50;
+    ghostAnimation[0][Right][1].x = 0;  ghostAnimation[0][Right][1].y = 50;     ghostAnimation[0][Right][1].w = 50;     ghostAnimation[0][Right][1].h = 50;
+    ghostAnimation[0][Down][0].x = 0;   ghostAnimation[0][Down][0].y = 100;     ghostAnimation[0][Down][0].w = 50;      ghostAnimation[0][Down][0].h = 50;
+    ghostAnimation[0][Down][1].x = 0;   ghostAnimation[0][Down][1].y = 150;     ghostAnimation[0][Down][1].w = 50;      ghostAnimation[0][Down][1].h = 50;
+    ghostAnimation[0][Left][0].x = 0;   ghostAnimation[0][Left][0].y = 200;     ghostAnimation[0][Left][0].w = 50;      ghostAnimation[0][Left][0].h = 50;
+    ghostAnimation[0][Left][1].x = 0;   ghostAnimation[0][Left][1].y = 250;     ghostAnimation[0][Left][1].w = 50;      ghostAnimation[0][Left][1].h = 50;
+    ghostAnimation[0][Up][0].x = 0;     ghostAnimation[0][Up][0].y = 300;       ghostAnimation[0][Up][0].w = 50;        ghostAnimation[0][Up][0].h = 50;
+    ghostAnimation[0][Up][1].x = 0;     ghostAnimation[0][Up][1].y = 350;       ghostAnimation[0][Up][1].w = 50;        ghostAnimation[0][Up][1].h = 50;
+    for (int ghosti = 1; ghosti < 4; ghosti++)
+    for (int directi = 0; directi < 4; directi++)
+    for (int animationi = 0; animationi <= 1; animationi++)
+    {
+            ghostAnimation[ghosti][directi][animationi].x = ghostAnimation[ghosti - 1][directi][animationi].x + 50;
+            ghostAnimation[ghosti][directi][animationi].y = ghostAnimation[ghosti - 1][directi][animationi].y;
+            ghostAnimation[ghosti][directi][animationi].w = ghostAnimation[ghosti - 1][directi][animationi].w;
+            ghostAnimation[ghosti][directi][animationi].h = ghostAnimation[ghosti - 1][directi][animationi].h;
+    }
+
 }
 
-void Ghost::render()
+void Ghost::render(int ghosti)
 {
-	sprites.render( mPosX, mPosY , &ghostAnimation[0][0][0]);
+	sprites.render( mPosX, mPosY , &ghostAnimation[ghosti][direct][frames / 8]);
 }

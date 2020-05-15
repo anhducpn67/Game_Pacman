@@ -56,6 +56,8 @@
 		<Unit filename="mainGame.cpp" />
 		<Unit filename="pacman.cpp" />
 		<Unit filename="pacman.h" />
+		<Unit filename="renderGame.cpp" />
+		<Unit filename="renderGame.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

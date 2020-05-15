@@ -21,9 +21,6 @@ class Pacman
 		// Direct
 		int direct = 0;
 
-		// Frames;
-		int frames = 0;
-
 		//Initializes the variables
 		Pacman();
 

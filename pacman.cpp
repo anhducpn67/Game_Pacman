@@ -76,28 +76,28 @@ void Pacman::handleEvent( SDL_Event& e )
         {
             case SDLK_UP:
             {
-                direct = 3;
+                direct = Up;
                 mVelY = -PACMAN_VEL;
                 mVelX = 0;
                 break;
             }
             case SDLK_DOWN:
             {
-                direct = 1;
+                direct = Down;
                 mVelY = PACMAN_VEL;
                 mVelX = 0;
                 break;
             }
             case SDLK_LEFT:
             {
-                direct = 2;
+                direct = Left;
                 mVelX = -PACMAN_VEL;
                 mVelY = 0;
                 break;
             }
             case SDLK_RIGHT:
             {
-                direct = 0;
+                direct = Right;
                 mVelX = PACMAN_VEL;
                 mVelY = 0;
                 break;
@@ -212,26 +212,26 @@ SDL_Rect pacmanAnimation[4][4];
 
 void getPacmanAnimation()
 {
-    // 0 : Right
-    pacmanAnimation[0][0].x = 850;   pacmanAnimation[0][0].y = 0;       pacmanAnimation[0][0].h = 50;   pacmanAnimation[0][0].w = 50;
-    pacmanAnimation[0][1].x = 850;   pacmanAnimation[0][1].y = 50;      pacmanAnimation[0][1].h = 50;   pacmanAnimation[0][1].w = 50;
-    pacmanAnimation[0][2].x = 850;   pacmanAnimation[0][2].y = 100;     pacmanAnimation[0][2].h = 50;   pacmanAnimation[0][2].w = 50;
-    pacmanAnimation[0][3].x = 850;   pacmanAnimation[0][3].y = 150;     pacmanAnimation[0][3].h = 50;   pacmanAnimation[0][3].w = 50;
-    // 1 : Down
-    pacmanAnimation[1][0].x = 850;   pacmanAnimation[1][0].y = 150;     pacmanAnimation[1][0].h = 50;    pacmanAnimation[1][0].w = 50;
-    pacmanAnimation[1][1].x = 850;   pacmanAnimation[1][1].y = 200;     pacmanAnimation[1][1].h = 50;    pacmanAnimation[1][1].w = 50;
-    pacmanAnimation[1][2].x = 850;   pacmanAnimation[1][2].y = 250;     pacmanAnimation[1][2].h = 50;    pacmanAnimation[1][2].w = 50;
-    pacmanAnimation[1][3].x = 850;   pacmanAnimation[1][3].y = 300;     pacmanAnimation[1][3].h = 50;    pacmanAnimation[1][3].w = 50;
-    // 2 : Left
-    pacmanAnimation[2][0].x = 850;   pacmanAnimation[2][0].y = 300;     pacmanAnimation[2][0].h = 50;    pacmanAnimation[2][0].w = 50;
-    pacmanAnimation[2][1].x = 850;   pacmanAnimation[2][1].y = 350;     pacmanAnimation[2][1].h = 50;    pacmanAnimation[2][1].w = 50;
-    pacmanAnimation[2][2].x = 850;   pacmanAnimation[2][2].y = 400;     pacmanAnimation[2][2].h = 50;    pacmanAnimation[2][2].w = 50;
-    pacmanAnimation[2][3].x = 850;   pacmanAnimation[2][3].y = 450;     pacmanAnimation[2][3].h = 50;    pacmanAnimation[2][3].w = 50;
-    // 3 : Up
-    pacmanAnimation[3][0].x = 850;   pacmanAnimation[3][0].y = 450;     pacmanAnimation[3][0].h = 50;    pacmanAnimation[3][0].w = 50;
-    pacmanAnimation[3][1].x = 850;   pacmanAnimation[3][1].y = 500;     pacmanAnimation[3][1].h = 50;    pacmanAnimation[3][1].w = 50;
-    pacmanAnimation[3][2].x = 850;   pacmanAnimation[3][2].y = 550;     pacmanAnimation[3][2].h = 50;    pacmanAnimation[3][2].w = 50;
-    pacmanAnimation[3][3].x = 850;   pacmanAnimation[3][3].y = 450;     pacmanAnimation[3][3].h = 50;    pacmanAnimation[3][3].w = 50;
+    //Right
+    pacmanAnimation[Right][0].x = 850;   pacmanAnimation[0][0].y = 0;       pacmanAnimation[0][0].h = 50;   pacmanAnimation[0][0].w = 50;
+    pacmanAnimation[Right][1].x = 850;   pacmanAnimation[0][1].y = 50;      pacmanAnimation[0][1].h = 50;   pacmanAnimation[0][1].w = 50;
+    pacmanAnimation[Right][2].x = 850;   pacmanAnimation[0][2].y = 100;     pacmanAnimation[0][2].h = 50;   pacmanAnimation[0][2].w = 50;
+    pacmanAnimation[Right][3].x = 850;   pacmanAnimation[0][3].y = 150;     pacmanAnimation[0][3].h = 50;   pacmanAnimation[0][3].w = 50;
+    //Down
+    pacmanAnimation[Down][0].x = 850;   pacmanAnimation[1][0].y = 150;     pacmanAnimation[1][0].h = 50;    pacmanAnimation[1][0].w = 50;
+    pacmanAnimation[Down][1].x = 850;   pacmanAnimation[1][1].y = 200;     pacmanAnimation[1][1].h = 50;    pacmanAnimation[1][1].w = 50;
+    pacmanAnimation[Down][2].x = 850;   pacmanAnimation[1][2].y = 250;     pacmanAnimation[1][2].h = 50;    pacmanAnimation[1][2].w = 50;
+    pacmanAnimation[Down][3].x = 850;   pacmanAnimation[1][3].y = 300;     pacmanAnimation[1][3].h = 50;    pacmanAnimation[1][3].w = 50;
+    //Left
+    pacmanAnimation[Left][0].x = 850;   pacmanAnimation[2][0].y = 300;     pacmanAnimation[2][0].h = 50;    pacmanAnimation[2][0].w = 50;
+    pacmanAnimation[Left][1].x = 850;   pacmanAnimation[2][1].y = 350;     pacmanAnimation[2][1].h = 50;    pacmanAnimation[2][1].w = 50;
+    pacmanAnimation[Left][2].x = 850;   pacmanAnimation[2][2].y = 400;     pacmanAnimation[2][2].h = 50;    pacmanAnimation[2][2].w = 50;
+    pacmanAnimation[Left][3].x = 850;   pacmanAnimation[2][3].y = 450;     pacmanAnimation[2][3].h = 50;    pacmanAnimation[2][3].w = 50;
+    //Up
+    pacmanAnimation[Up][0].x = 850;   pacmanAnimation[3][0].y = 450;     pacmanAnimation[3][0].h = 50;    pacmanAnimation[3][0].w = 50;
+    pacmanAnimation[Up][1].x = 850;   pacmanAnimation[3][1].y = 500;     pacmanAnimation[3][1].h = 50;    pacmanAnimation[3][1].w = 50;
+    pacmanAnimation[Up][2].x = 850;   pacmanAnimation[3][2].y = 550;     pacmanAnimation[3][2].h = 50;    pacmanAnimation[3][2].w = 50;
+    pacmanAnimation[Up][3].x = 850;   pacmanAnimation[3][3].y = 450;     pacmanAnimation[3][3].h = 50;    pacmanAnimation[3][3].w = 50;
 }
 
 void Pacman::render()
