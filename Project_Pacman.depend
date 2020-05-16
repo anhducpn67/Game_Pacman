@@ -736,12 +736,12 @@
 	<stdio.h>
 	<SDL_ttf.h>
 
-1589539293 c:\users\anhduc\desktop\study\ltnc\project_pacman\externvariables.h
+1589598547 c:\users\anhduc\desktop\study\ltnc\project_pacman\externvariables.h
 	"LTexture.h"
 	"pacman.h"
 	"ghost.h"
 
-1589547684 source:c:\users\anhduc\desktop\study\ltnc\project_pacman\maingame.cpp
+1589598828 source:c:\users\anhduc\desktop\study\ltnc\project_pacman\maingame.cpp
 	"LTexture.h"
 	"pacman.h"
 	"creatWallandPoint.h"
@@ -775,9 +775,9 @@
 	<stdio.h>
 	<SDL_ttf.h>
 
-1589511067 c:\users\anhduc\desktop\study\ltnc\project_pacman\creatwallandpoint.h
+1589598637 c:\users\anhduc\desktop\study\ltnc\project_pacman\creatwallandpoint.h
 
-1589511288 source:c:\users\anhduc\desktop\study\ltnc\project_pacman\creatwallandpoint.cpp
+1589598632 source:c:\users\anhduc\desktop\study\ltnc\project_pacman\creatwallandpoint.cpp
 	"creatWallandPoint.h"
 	"externVariables.h"
 
@@ -791,7 +791,7 @@
 	<stdio.h>
 	<SDL_ttf.h>
 
-1589545854 source:c:\users\anhduc\desktop\study\ltnc\project_pacman\rendergame.cpp
+1589598762 source:c:\users\anhduc\desktop\study\ltnc\project_pacman\rendergame.cpp
 	"renderGame.h"
 	"externVariables.h"
 

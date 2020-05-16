@@ -7,34 +7,6 @@
 
 using namespace std;
 
-SDL_Rect point;
-int pointX[100], pointY[100];
-int nPoint = 0;
-int Score = 0;
-bool isEateanPoint[100];
-
-void getPoint()
-{
-    point.x = 560; point.y = 600; point.h = 30; point.w = 30;
-    pointX[0] = 20; pointY[0] = 25;
-    // Row 1:
-    for (int i = 1; i <= 11; i++)
-    {
-        nPoint++;
-        pointX[nPoint] = pointX[nPoint - 1] + 30;
-        pointY[nPoint] = pointY[nPoint - 1];
-    }
-    nPoint++;
-    pointX[nPoint] = pointX[nPoint - 1] + 66; pointY[nPoint] = pointY[nPoint - 1];
-    for (int i = 1; i <= 11; i++)
-    {
-        nPoint++;
-        pointX[nPoint] = pointX[nPoint - 1] + 30;
-        pointY[nPoint] = pointY[nPoint - 1];
-    }
-    // Done row 1
-}
-
 int main( int argc, char* args[] )
 {
     srand(time(NULL));
@@ -58,11 +30,11 @@ int main( int argc, char* args[] )
 
     //Create Walls
     createWalls();
+    createPoint();
 
     //Create Pacman & Ghost Animation & Point
     getPacmanAnimation();
     getGhostAnimation();
-    getPoint();
 
     //Game loop
     while( !quit )
@@ -106,19 +78,20 @@ int main( int argc, char* args[] )
         }
 
         //Check if pacman eat point
-        for (int i = 0; i <= nPoint; i++)
+        for (int rowi = 1; rowi <= nRow; rowi++)
+        for (int coli = 1; coli <= nCol; coli++)
         {
-            if (isEateanPoint[i])   continue;
+            if (isEateanPoint[rowi][coli])   continue;
             int numbersPixel = 20;
             SDL_Rect A = pacman.mCollider;
             A.w -= numbersPixel;  A.h -= numbersPixel;
             A.x += numbersPixel;  A.y += numbersPixel;
             SDL_Rect B;
-            B.x = pointX[i] + 18;   B.y = pointY[i] + 18;
+            B.x = pointX[rowi][coli] + 18;   B.y = pointY[rowi][coli] + 18;
             B.w = 20;   B.h = 20;
             if (checkCollision(A, B))
             {
-                isEateanPoint[i] = true;
+                isEateanPoint[rowi][coli] = true;
                 Score += 10;
             }
         }
@@ -127,11 +100,6 @@ int main( int argc, char* args[] )
         RenderGame();
 
         cout << Score << "\n";
-
-        // Test render Point
-        for (int i = 0; i <= nPoint; i++)
-            if (!isEateanPoint[i])
-                sprites.render(pointX[i], pointY[i], &point);
 
         // Update frames;
         frames++;
@@ -146,9 +114,6 @@ int main( int argc, char* args[] )
         {
 
         }
-
-        //Update screen
-        SDL_RenderPresent( gRenderer );
     }
 	//Free resources and close SDL
 	close();

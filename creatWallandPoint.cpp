@@ -4,6 +4,10 @@
 int x1= 16, x2= 72, x3= 143, x4= 157, x5= 214, x6= 243, x7= 300, x8= 313, x9= 328, x10= 362, x11= 385, x0= 400;
 int y2= 74, y3= 130, y4= 187, y5= 215, y6= 273, y7= 286, y8= 300, y9= 357, y10= 369, y11= 386, y12= 442;
 int y13= 458, y14= 472, y15= 527, y16= 541, y17= 556, y18= 612, y19= 640, y20= 697, y21= 726, y22= 782, y23= 812, y24= 867;
+SDL_Rect point;
+int pointX[100][100], pointY[100][100];
+int Score = 0;
+bool isEateanPoint[100][100];
 
 SDL_Rect wall[numbers_Wall];
 
@@ -71,3 +75,103 @@ void createWalls()
     wall[53].x = 800-x2;      wall[53].y = y20;   wall[53].w = x2;   wall[53].h = y21-y20;
     wall[54].x = 800-x1;      wall[54].y = y16;   wall[54].w = x1;   wall[54].h = 886-y16;
 }
+
+void createPoint()
+{
+    point.x = 560; point.y = 600; point.h = 30; point.w = 30;
+    // Row 1
+    pointX[1][1] = 20; pointY[1][1] = 26;
+    for (int coli = 2; coli <= nCol; coli++)
+    {
+        pointX[1][coli] = pointX[1][coli - 1] + 30;
+        pointY[1][coli] = pointY[1][coli - 1];
+    }
+    // Row 2 - 10
+    for (int rowi = 2; rowi <= 10; rowi++)
+    for (int coli = 1; coli <= nCol; coli++)
+    {
+        pointX[rowi][coli] = pointX[rowi - 1][coli];
+        pointY[rowi][coli] = pointY[rowi - 1][coli] + 41;
+    }
+    //Fix row 10 && row 4
+    for (int coli = 1; coli <= nCol; coli++)
+    {
+        pointY[10][coli] = pointY[10][coli] + 4;
+        pointY[4][coli] = pointY[4][coli] - 4;
+    }
+    // Row 11 - nRow
+    for (int rowi = 11; rowi <= nRow; rowi++)
+    for (int coli = 1; coli <= nCol; coli++)
+    {
+        pointX[rowi][coli] = pointX[rowi - 1][coli];
+        pointY[rowi][coli] = pointY[rowi - 1][coli] + 41;
+    }
+    // Fix row 14 & row 16
+    for (int coli = 1; coli <= nCol; coli++)
+    {
+        pointY[14][coli] = pointY[14][coli] + 5;
+        pointY[15][coli] = pointY[15][coli] + 6;
+        pointY[16][coli] = pointY[16][coli] + 8;
+    }
+    for (int rowi = 17; rowi <= nRow; rowi++)
+    for (int coli = 1; coli <= nCol; coli++)
+    {
+        pointX[rowi][coli] = pointX[rowi][coli];
+        pointY[rowi][coli] = pointY[rowi][coli] + 8;
+    }
+    for (int rowi = 18; rowi <= nRow; rowi++)
+    for (int coli = 1; coli <= nCol; coli++)
+    {
+        pointX[rowi][coli] = pointX[rowi][coli];
+        pointY[rowi][coli] = pointY[rowi][coli] + 7;
+    }
+    for (int coli = 1; coli <= nCol; coli++)    pointY[17][coli] = pointY[17][coli] + 5;
+    for (int coli = 1; coli <= nCol; coli++)    pointY[20][coli] = pointY[20][coli] + 3;
+    // Fix col
+    for (int rowi = 1; rowi <= nRow; rowi++)
+    for (int coli = 14; coli <= nCol; coli++)
+        pointX[rowi][coli] += 8;
+
+    for (int rowi = 1; rowi <= nRow; rowi++)
+    for (int coli = 7; coli <= 12; coli++)
+        pointX[rowi][coli] += 10;
+    for (int rowi = 1; rowi <= nRow; rowi++)     pointX[rowi][11] += 5;
+    for (int rowi = 1; rowi <= nRow; rowi++)     pointX[rowi][11] += 5;
+    for (int rowi = 1; rowi <= nRow; rowi++)     pointX[rowi][6]  += 3;
+
+    for (int rowi = 1; rowi <= nRow; rowi++)
+    for (int coli = 8; coli <= 10; coli++)
+        pointX[rowi][coli] += 8;
+
+    for (int coli = 0; coli <= 3; coli++)
+        isEateanPoint[8][nCol - coli] = true;
+    isEateanPoint[9][13] = true;
+    for (int coli = 11; coli <= 15; coli++)
+        isEateanPoint[10][coli] = true;
+    for (int coli = 1; coli <= 4; coli++)
+        isEateanPoint[12][coli] = true;
+
+    for (int rowi = 1; rowi <= nRow; rowi++)
+    for (int coli = 1; coli <= nCol; coli++)
+    {
+        if (coli == 12)
+        {
+            isEateanPoint[rowi][coli] = true;
+            continue;
+        }
+        SDL_Rect pointi;
+        pointi.x = pointX[rowi][coli];    pointi.y = pointY[rowi][coli];
+        pointi.h = 30;                    pointi.w = 30;
+        for (int walli = 1; walli <= numbers_Wall; walli++)
+        {
+            if (checkCollision(pointi, wall[walli]))
+            {
+                isEateanPoint[rowi][coli] = true;
+                break;
+            }
+        }
+    }
+}
+
+
+

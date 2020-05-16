@@ -7,6 +7,8 @@ const int SCREEN_WIDTH = 1200;
 const int SCREEN_HEIGHT = 888;
 const int numbers_Wall = 54;
 const int numberGhosts = 4;
+const int nCol = 25;
+const int nRow = 20;
 
 //Direct
 const int Right = 0;
@@ -22,3 +24,8 @@ extern Pacman pacman;
 extern Ghost ghost[];
 extern SDL_Rect wall[];
 extern int frames;
+extern SDL_Rect point;
+extern int pointX[100][100];
+extern int pointY[100][100];
+extern int Score;
+extern bool isEateanPoint[100][100];
