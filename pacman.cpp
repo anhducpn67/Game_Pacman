@@ -22,6 +22,23 @@ Pacman::Pacman()
     mVelY = 0;
 }
 
+void Pacman::reset()
+{
+    //Initialize the offsets
+    mPosX = 20;
+    mPosY = 20;
+
+    //Set collision box dimension
+    mCollider.w = PACMAN_WIDTH;
+    mCollider.h = PACMAN_HEIGHT;
+    mCollider.x = mPosX;
+    mCollider.y = mPosY;
+
+    //Initialize the velocity
+    mVelX = 0;
+    mVelY = 0;
+}
+
 void Pacman::handleEvent( SDL_Event& e )
 {
     //If a key was pressed

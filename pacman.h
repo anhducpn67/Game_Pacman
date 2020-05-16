@@ -21,6 +21,9 @@ class Pacman
 		// Direct
 		int direct = 0;
 
+		//Lives
+		int Lives = 3;
+
 		//Check if Pacman eats cherry
 		bool eatCherry = false;
 
@@ -29,6 +32,9 @@ class Pacman
 
 		//Initializes the variables
 		Pacman();
+
+		//Reset pacman
+		void reset();
 
 		//Handle keyboard's events
 		void handleEvent( SDL_Event& e );

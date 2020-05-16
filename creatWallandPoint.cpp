@@ -84,6 +84,8 @@ void createPoint()
     point.x = 560; point.y = 600; point.h = 30; point.w = 30;
     cherry.x = 605; cherry.y = 5; cherry.h = 40; cherry.w = 40;
 
+    memset(isEateanPoint, false, sizeof isEateanPoint);
+
     // Row 1
     pointX[1][1] = 20; pointY[1][1] = 26;
     for (int coli = 2; coli <= nCol; coli++)

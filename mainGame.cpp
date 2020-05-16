@@ -11,6 +11,7 @@ using namespace std;
 int main( int argc, char* args[] )
 {
     srand(time(NULL));
+
 	//Start up SDL and create window
 	if( !init() )
 	{
@@ -46,12 +47,13 @@ int main( int argc, char* args[] )
         //Render Game
         RenderGame();
 
-        // End game
+        //End game
         if (quit == true)
         {
 
         }
     }
+
 	//Free resources and close SDL
 	close();
 	return 0;

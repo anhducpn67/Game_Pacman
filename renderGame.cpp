@@ -37,10 +37,16 @@ void RenderGame()
 
     //Score
     SDL_Color textColor = { 255, 255, 255 };
-    highscore.loadFromRenderedText("HIGH SCORE", textColor);
-    highscore.render(810, 30);
-    highscore.loadFromRenderedText(to_string(Score), textColor);
-    highscore.render(900, 90);
+    Text.loadFromRenderedText("HIGH SCORE", textColor);
+    Text.render(810, 30);
+    Text.loadFromRenderedText(to_string(Score), textColor);
+    Text.render(900, 90);
+
+    //Lives
+    Text.loadFromRenderedText("LIVES", textColor);
+    Text.render(870, 300);
+    Text.loadFromRenderedText(to_string(pacman.Lives), textColor);
+    Text.render(920, 350);
 
     //Update screen
     SDL_RenderPresent( gRenderer );

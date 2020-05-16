@@ -15,8 +15,8 @@ LTexture sprites;
 //Globally used font
 TTF_Font *gFont = NULL;
 
-//Texture highscore
-LTexture highscore;
+//Texture fonts
+LTexture Text;
 
 //Frames
 int frames = 0;

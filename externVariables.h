@@ -33,4 +33,4 @@ extern bool isEateanPoint[30][30];
 extern int cherryX[5];
 extern int cherryY[5];
 extern TTF_Font *gFont;
-extern LTexture highscore;
+extern LTexture Text;

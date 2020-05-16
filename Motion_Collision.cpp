@@ -1,4 +1,5 @@
 #include "Motion_Collision.h"
+#include "creatWallandPoint.h"
 #include "externVariables.h"
 
 bool checkCollision( SDL_Rect& a, SDL_Rect& b )
@@ -68,14 +69,15 @@ void Motion_Collision(bool& quit)
             B.x += numbersPixel;   B.y += numbersPixel;
             if (checkCollision(A, B))
             {
-                if (pacman.eatCherry == true)
+                if (pacman.eatCherry == true)   //Pacman eats ghosts
                 {
                     Score += 200;
                     ghost[i].timeDeath = SDL_GetTicks();
                 }
-                if (pacman.eatCherry == false)
+                if (pacman.eatCherry == false)  //Pacman dies
                 {
-                    quit = true;
+                    pacman.Lives -= 1;
+                    pacman.reset();
                     break;
                 }
             }
@@ -139,12 +141,21 @@ void Motion_Collision(bool& quit)
                 }
             }
 
+        //Check if all points is eaten
+        bool remain = false;
+        for (int rowi = 1; rowi <= nRow; rowi++)
+        for (int coli = 1; coli <= nCol; coli++)
+            if (isEateanPoint[rowi][coli] == false) remain = true;
+        if (remain == false) createPoint();
+
         // Update frames;
         frames++;
         if(frames / 4 >= 4 )
         {
             frames = 0;
         }
+
+        if (pacman.Lives == 0)  quit = true;
 }
 
 //Event handler
