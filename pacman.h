@@ -21,6 +21,12 @@ class Pacman
 		// Direct
 		int direct = 0;
 
+		//Check if Pacman eats cherry
+		bool eatCherry = false;
+
+		//Time eat cherry
+		int timeEatCherry = 0;
+
 		//Initializes the variables
 		Pacman();
 
@@ -44,7 +50,6 @@ class Pacman
 		int mVelX, mVelY;
 };
 
-bool checkCollision( SDL_Rect& a, SDL_Rect& b );
 void getPacmanAnimation();
 
 #endif // PACMAN_H

@@ -48,6 +48,8 @@
 		<Unit filename="InitCloseSDL.h" />
 		<Unit filename="LTexture.cpp" />
 		<Unit filename="LTexture.h" />
+		<Unit filename="Motion_Collision.cpp" />
+		<Unit filename="Motion_Collision.h" />
 		<Unit filename="creatWallandPoint.cpp" />
 		<Unit filename="creatWallandPoint.h" />
 		<Unit filename="externVariables.h" />

@@ -3,7 +3,7 @@
 #include "ghost.h"
 
 //Screen dimension constants
-const int SCREEN_WIDTH = 1200;
+const int SCREEN_WIDTH = 1100;
 const int SCREEN_HEIGHT = 888;
 const int numbers_Wall = 54;
 const int numberGhosts = 4;
@@ -25,7 +25,12 @@ extern Ghost ghost[];
 extern SDL_Rect wall[];
 extern int frames;
 extern SDL_Rect point;
-extern int pointX[100][100];
-extern int pointY[100][100];
+extern SDL_Rect cherry;
+extern int pointX[30][30];
+extern int pointY[30][30];
 extern int Score;
-extern bool isEateanPoint[100][100];
+extern bool isEateanPoint[30][30];
+extern int cherryX[5];
+extern int cherryY[5];
+extern TTF_Font *gFont;
+extern LTexture highscore;

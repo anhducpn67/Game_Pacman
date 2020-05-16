@@ -1,5 +1,6 @@
 #include "ghost.h"
 #include "externVariables.h"
+#include "Motion_Collision.h"
 
 //Create Ghost
 Ghost ghost[numberGhosts + 1];
@@ -7,6 +8,26 @@ Ghost ghost[numberGhosts + 1];
 Ghost::Ghost()
 {
     //Initialize the offsets
+    mPosX = 380;
+    mPosY = 400;
+
+    //Set collision box dimension
+    mCollider.w = GHOST_WIDTH;
+    mCollider.h = GHOST_HEIGHT;
+    mCollider.x = mPosX;
+    mCollider.y = mPosY;
+
+    //Initialize the velocity
+    mVelX = 0;
+    mVelY = 0;
+
+    // Initialize direct and isBlock
+    direct = 3;
+    isBlock = false;
+}
+
+void Ghost::resetGhost()
+{
     mPosX = 380;
     mPosY = 400;
 
@@ -98,6 +119,7 @@ void Ghost::move( SDL_Rect wall[], int numbers_Wall)
 }
 
 SDL_Rect ghostAnimation[4][4][4];
+SDL_Rect scaredGhost[2];
 
 void getGhostAnimation()
 {
@@ -109,6 +131,11 @@ void getGhostAnimation()
     ghostAnimation[0][Left][1].x = 0;   ghostAnimation[0][Left][1].y = 250;     ghostAnimation[0][Left][1].w = 50;      ghostAnimation[0][Left][1].h = 50;
     ghostAnimation[0][Up][0].x = 0;     ghostAnimation[0][Up][0].y = 300;       ghostAnimation[0][Up][0].w = 50;        ghostAnimation[0][Up][0].h = 50;
     ghostAnimation[0][Up][1].x = 0;     ghostAnimation[0][Up][1].y = 350;       ghostAnimation[0][Up][1].w = 50;        ghostAnimation[0][Up][1].h = 50;
+
+    // Scared Ghost
+    scaredGhost[0].x = 0; scaredGhost[0].y = 650;   scaredGhost[0].h = 50;  scaredGhost[0].w = 50;
+    scaredGhost[1].x = 0; scaredGhost[1].y = 700;   scaredGhost[1].h = 50;  scaredGhost[1].w = 50;
+
     for (int ghosti = 1; ghosti < 4; ghosti++)
     for (int directi = 0; directi < 4; directi++)
     for (int animationi = 0; animationi <= 1; animationi++)
@@ -118,10 +145,12 @@ void getGhostAnimation()
             ghostAnimation[ghosti][directi][animationi].w = ghostAnimation[ghosti - 1][directi][animationi].w;
             ghostAnimation[ghosti][directi][animationi].h = ghostAnimation[ghosti - 1][directi][animationi].h;
     }
-
 }
 
 void Ghost::render(int ghosti)
 {
-	sprites.render( mPosX, mPosY , &ghostAnimation[ghosti][direct][frames / 8]);
+    if (pacman.eatCherry == false)
+        sprites.render( mPosX, mPosY , &ghostAnimation[ghosti][direct][frames / 8]);
+    if (pacman.eatCherry == true)
+        sprites.render (mPosX, mPosY, &scaredGhost[frames / 8]);
 }

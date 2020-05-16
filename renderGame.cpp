@@ -14,6 +14,13 @@ void RenderGame()
     //Render background
     background.render(0, 0);
 
+    //Render cherry
+    for (int i = 1; i <= 4; i++)
+    {
+        if (cherryX[i] == -1 && cherryY[i] == -1)   continue;
+        sprites.render(cherryX[i], cherryY[i], &cherry);
+    }
+
     //Render points
     for (int rowi = 1; rowi <= nRow; rowi++)
     for (int coli = 1; coli <= nCol; coli++)
@@ -25,7 +32,15 @@ void RenderGame()
 
     //Render Ghosts
     for (int i = 1; i <= 4; i++)
-        ghost[i].render(i - 1);
+        if (ghost[i].timeDeath == -1)
+            ghost[i].render(i - 1);
+
+    //Score
+    SDL_Color textColor = { 255, 255, 255 };
+    highscore.loadFromRenderedText("HIGH SCORE", textColor);
+    highscore.render(810, 30);
+    highscore.loadFromRenderedText(to_string(Score), textColor);
+    highscore.render(900, 90);
 
     //Update screen
     SDL_RenderPresent( gRenderer );

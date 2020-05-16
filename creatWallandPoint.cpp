@@ -1,13 +1,15 @@
 #include "creatWallandPoint.h"
 #include "externVariables.h"
+#include "Motion_Collision.h"
 
 int x1= 16, x2= 72, x3= 143, x4= 157, x5= 214, x6= 243, x7= 300, x8= 313, x9= 328, x10= 362, x11= 385, x0= 400;
 int y2= 74, y3= 130, y4= 187, y5= 215, y6= 273, y7= 286, y8= 300, y9= 357, y10= 369, y11= 386, y12= 442;
 int y13= 458, y14= 472, y15= 527, y16= 541, y17= 556, y18= 612, y19= 640, y20= 697, y21= 726, y22= 782, y23= 812, y24= 867;
-SDL_Rect point;
-int pointX[100][100], pointY[100][100];
+SDL_Rect point, cherry;
+int pointX[30][30], pointY[30][30];
+int cherryX[5], cherryY[5];
 int Score = 0;
-bool isEateanPoint[100][100];
+bool isEateanPoint[30][30];
 
 SDL_Rect wall[numbers_Wall];
 
@@ -78,7 +80,10 @@ void createWalls()
 
 void createPoint()
 {
+    //Clip for point and cherry
     point.x = 560; point.y = 600; point.h = 30; point.w = 30;
+    cherry.x = 605; cherry.y = 5; cherry.h = 40; cherry.w = 40;
+
     // Row 1
     pointX[1][1] = 20; pointY[1][1] = 26;
     for (int coli = 2; coli <= nCol; coli++)
@@ -170,6 +175,20 @@ void createPoint()
                 break;
             }
         }
+    }
+
+    //Creat cherry
+    for (int i = 1; i <= 4; i++)
+    {
+        int rowi = rand() % nRow + 1;
+        int coli = rand() % nCol + 1;
+        while(isEateanPoint[rowi][coli])
+        {
+            rowi = rand() % nRow + 1;
+            coli = rand() % nCol + 1;
+        }
+        isEateanPoint[rowi][coli] = true;
+        cherryX[i] = pointX[rowi][coli];  cherryY[i] = pointY[rowi][coli];
     }
 }
 

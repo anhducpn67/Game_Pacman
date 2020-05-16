@@ -47,6 +47,12 @@ bool init()
 					printf( "SDL_image could not initialize! SDL_image Error: %s\n", IMG_GetError() );
 					success = false;
 				}
+				//Initialize SDL_ttf
+                if( TTF_Init() == -1 )
+                {
+                    printf( "SDL_ttf could not initialize! SDL_ttf Error: %s\n", TTF_GetError() );
+                    success = false;
+                }
 			}
 		}
 	}
@@ -57,6 +63,14 @@ bool loadMedia()
 {
 	//Loading success flag
 	bool success = true;
+
+	//Open the font
+    gFont = TTF_OpenFont( "Fonts/pixel2.ttf", 28 );
+    if( gFont == NULL )
+    {
+        printf( "Failed to load font! SDL_ttf Error: %s\n", TTF_GetError() );
+        success = false;
+    }
 
 	//Load texture pacman and ghost
 	if( !sprites.loadFromFile( "Images/sprites2.png" ) )
@@ -79,6 +93,10 @@ void close()
 	sprites.free();
     background.free();
 
+    //Free global font
+    TTF_CloseFont( gFont );
+    gFont = NULL;
+
 	//Destroy window
 	SDL_DestroyRenderer( gRenderer );
 	SDL_DestroyWindow( gWindow );
@@ -86,6 +104,7 @@ void close()
 	gRenderer = NULL;
 
 	//Quit SDL subsystems
+    TTF_Quit();
 	IMG_Quit();
 	SDL_Quit();
 }

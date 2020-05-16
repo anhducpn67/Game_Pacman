@@ -22,6 +22,12 @@ class Ghost
 		// Check if ghost is blocked;
 		bool isBlock = false;
 
+		//Reset ghost
+		void resetGhost();
+
+		//Time death
+		int timeDeath = -1;
+
 		//Initializes the variables
 		Ghost();
 
