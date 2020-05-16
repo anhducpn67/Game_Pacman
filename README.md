@@ -2,7 +2,9 @@
 
 Need add:
 
-Score
+Animation when Pacman dies
 
 Sound Effects and Music
+
+Menu
 	
