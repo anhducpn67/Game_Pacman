@@ -1,8 +1,4 @@
-#Note
-
-Need add:
-
-Animation when Pacman dies
+#Need add:
 
 Sound Effects and Music
 
