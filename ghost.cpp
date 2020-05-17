@@ -152,5 +152,18 @@ void Ghost::render(int ghosti)
     if (pacman.eatCherry == false)
         sprites.render( mPosX, mPosY , &ghostAnimation[ghosti][direct][frames / 8]);
     if (pacman.eatCherry == true)
-        sprites.render (mPosX, mPosY, &scaredGhost[frames / 8]);
+    {
+        int Time = SDL_GetTicks();
+        if ((Time - pacman.timeEatCherry) / 1000 >= 7)
+        {
+            if (frames / 4 <= 2)
+                sprites.render (mPosX, mPosY, &scaredGhost[frames / 8]);
+            else
+                sprites.render (mPosX, mPosY , &ghostAnimation[ghosti][direct][frames / 8]);
+        }
+        else
+        {
+            sprites.render (mPosX, mPosY, &scaredGhost[frames / 8]);
+        }
+    }
 }
