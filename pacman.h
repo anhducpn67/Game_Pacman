@@ -33,6 +33,9 @@ class Pacman
 		//Initializes the variables
 		Pacman();
 
+		//Check if pacman die
+        bool isDead = false;
+
 		//Reset pacman
 		void reset();
 

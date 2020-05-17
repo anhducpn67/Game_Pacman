@@ -17,6 +17,9 @@ Pacman::Pacman()
     mCollider.x = mPosX;
     mCollider.y = mPosY;
 
+    //Initialize direct
+    direct = Right;
+
     //Initialize the velocity
     mVelX = 0;
     mVelY = 0;
@@ -33,6 +36,9 @@ void Pacman::reset()
     mCollider.h = PACMAN_HEIGHT;
     mCollider.x = mPosX;
     mCollider.y = mPosY;
+
+    //Initialize direct
+    direct = Right;
 
     //Initialize the velocity
     mVelX = 0;
@@ -80,6 +86,9 @@ void Pacman::handleEvent( SDL_Event& e )
 
 void Pacman::move( SDL_Rect wall[], int numbers_Wall)
 {
+    //If pacman dies
+    if (isDead == true) return;
+
     //Move Pacman left or right
     mPosX += mVelX;
     mCollider.x = mPosX;
@@ -181,6 +190,7 @@ void Pacman::move( SDL_Rect wall[], int numbers_Wall)
 
 //Pacman's animation
 SDL_Rect pacmanAnimation[4][4];
+SDL_Rect pacmanDeath[14];
 
 void getPacmanAnimation()
 {
@@ -204,10 +214,41 @@ void getPacmanAnimation()
     pacmanAnimation[Up][1].x = 850;   pacmanAnimation[3][1].y = 500;     pacmanAnimation[3][1].h = 50;    pacmanAnimation[3][1].w = 50;
     pacmanAnimation[Up][2].x = 850;   pacmanAnimation[3][2].y = 550;     pacmanAnimation[3][2].h = 50;    pacmanAnimation[3][2].w = 50;
     pacmanAnimation[Up][3].x = 850;   pacmanAnimation[3][3].y = 450;     pacmanAnimation[3][3].h = 50;    pacmanAnimation[3][3].w = 50;
+    //Pacman dies
+    pacmanDeath[0].x = 350; pacmanDeath[0].y = 0;   pacmanDeath[0].w = 50;  pacmanDeath[0].h = 50;
+    for (int i = 1; i <= 11; i++)
+    {
+        pacmanDeath[i].x = pacmanDeath[i - 1].x;
+        pacmanDeath[i].y = pacmanDeath[i - 1].y + 50;
+        pacmanDeath[i].h = pacmanDeath[i - 1].h;
+        pacmanDeath[i].w = pacmanDeath[i - 1].w;
+    }
+    for (int i = 12; i <= 13; i++)
+    {
+        pacmanDeath[i].x = pacmanDeath[i - 1].x;
+        pacmanDeath[i].y = pacmanDeath[i - 1].y;
+        pacmanDeath[i].h = pacmanDeath[i - 1].h;
+        pacmanDeath[i].w = pacmanDeath[i - 1].w;
+    }
 }
 
 void Pacman::render()
 {
-	sprites.render( mPosX, mPosY , &pacmanAnimation[direct][frames / 4]);
+    static int framesDeath = 0;
+    if (pacman.isDead == true)
+    {
+        sprites.render(mPosX, mPosY, &pacmanDeath[framesDeath / 9]);
+        framesDeath++;
+        if (framesDeath / 9 >= 14)  // Pacman reset
+        {
+            framesDeath = 0;
+            pacman.isDead = false;
+            pacman.reset();
+        }
+    }
+    if (pacman.isDead == false)
+    {
+        sprites.render( mPosX, mPosY , &pacmanAnimation[direct][frames / 4]);
+    }
 }
 

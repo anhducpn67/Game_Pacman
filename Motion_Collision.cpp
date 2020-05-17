@@ -48,6 +48,9 @@ bool checkCollision( SDL_Rect& a, SDL_Rect& b )
 
 void Motion_Collision(bool& quit)
 {
+
+        if (pacman.isDead == true)  return;
+
         //Move the Pacman, Ghost and check collision
         pacman.move( wall, numbers_Wall);
         for (int i = 1; i <= 4; i++)
@@ -77,7 +80,7 @@ void Motion_Collision(bool& quit)
                 if (pacman.eatCherry == false)  //Pacman dies
                 {
                     pacman.Lives -= 1;
-                    pacman.reset();
+                    pacman.isDead = true;
                     break;
                 }
             }
@@ -155,7 +158,10 @@ void Motion_Collision(bool& quit)
             frames = 0;
         }
 
-        if (pacman.Lives == 0)  quit = true;
+        if (pacman.Lives == -1)
+        {
+            quit = true;
+        }
 }
 
 //Event handler
