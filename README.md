@@ -1,6 +1,5 @@
 #Need add:
 
-Sound Effects and Music
-
 Menu
 	
+Algorithm for ghosts 
