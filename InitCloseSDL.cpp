@@ -7,13 +7,20 @@ bool init()
 	bool success = true;
 
 	//Initialize SDL
-	if( SDL_Init( SDL_INIT_VIDEO ) < 0 )
+	if( SDL_Init( SDL_INIT_VIDEO | SDL_INIT_AUDIO ) < 0 )
 	{
 		printf( "SDL could not initialize! SDL Error: %s\n", SDL_GetError() );
 		success = false;
 	}
 	else
 	{
+        //Initialize SDL_mixer
+        if( Mix_OpenAudio( 44100, MIX_DEFAULT_FORMAT, 2, 2048 ) < 0 )
+        {
+            printf( "SDL_mixer could not initialize! SDL_mixer Error: %s\n", Mix_GetError() );
+            success = false;
+        }
+
 		//Set texture filtering to linear
 		if( !SDL_SetHint( SDL_HINT_RENDER_SCALE_QUALITY, "1" ) )
 		{
@@ -87,6 +94,68 @@ bool loadMedia()
 	return success;
 }
 
+//The music that will be played
+Mix_Music *theme = NULL;
+
+//The sound effects that will be used
+Mix_Chunk *die = NULL;
+Mix_Chunk *eatghost = NULL;
+Mix_Chunk *eatpoint = NULL;
+Mix_Chunk *opening = NULL;
+Mix_Chunk *pacmaneatcherry = NULL;
+
+bool loadSound()
+{
+    //Loading success flag
+    bool success = true;
+
+    //Load music
+    theme = Mix_LoadMUS( "Sounds/theme1.mp3" );
+    if( theme == NULL )
+    {
+        printf( "Failed to load beat music! SDL_mixer Error: %s\n", Mix_GetError() );
+        success = false;
+    }
+
+    //Load sound effects
+    opening = Mix_LoadWAV( "Sounds/opening.ogg" );
+    if( opening == NULL )
+    {
+        printf( "Failed to load scratch sound effect! SDL_mixer Error: %s\n", Mix_GetError() );
+        success = false;
+    }
+
+    die = Mix_LoadWAV( "Sounds/die.ogg" );
+    if( die == NULL )
+    {
+        printf( "Failed to load high sound effect! SDL_mixer Error: %s\n", Mix_GetError() );
+        success = false;
+    }
+
+    eatghost = Mix_LoadWAV( "Sounds/eatghost.ogg" );
+    if( eatghost == NULL )
+    {
+        printf( "Failed to load medium sound effect! SDL_mixer Error: %s\n", Mix_GetError() );
+        success = false;
+    }
+
+    eatpoint = Mix_LoadWAV( "Sounds/eatcherry.mp3" );
+    if( eatpoint == NULL )
+    {
+        printf( "Failed to load low sound effect! SDL_mixer Error: %s\n", Mix_GetError() );
+        success = false;
+    }
+
+    pacmaneatcherry = Mix_LoadWAV("Sounds/ghost-turn-to-blue.mp3");
+    if( pacmaneatcherry == NULL )
+    {
+        printf( "Failed to load low sound effect! SDL_mixer Error: %s\n", Mix_GetError() );
+        success = false;
+    }
+
+    return success;
+}
+
 void close()
 {
 	//Free loaded images
@@ -96,6 +165,21 @@ void close()
     //Free global font
     TTF_CloseFont( gFont );
     gFont = NULL;
+
+    //Free the music
+    Mix_FreeMusic( theme );
+    theme = NULL;
+
+    //Free the sound effects
+    Mix_FreeChunk(die);
+    Mix_FreeChunk(eatghost);
+    Mix_FreeChunk(eatpoint);
+    Mix_FreeChunk(opening);
+    Mix_FreeChunk(pacmaneatcherry);
+    eatghost = NULL;
+    eatpoint = NULL;
+    opening = NULL;
+    pacmaneatcherry = NULL;
 
 	//Destroy window
 	SDL_DestroyRenderer( gRenderer );

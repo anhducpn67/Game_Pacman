@@ -24,6 +24,13 @@ int main( int argc, char* args[] )
         printf( "Failed to load media!\n" );
         return 0;
     }
+    //Load sound
+    if( !loadSound() )
+    {
+        printf( "Failed to load music!\n" );
+        return 0;
+    }
+
     //Main loop flag
     bool quit = false;
 
@@ -34,6 +41,17 @@ int main( int argc, char* args[] )
     //Create Pacman & Ghost Animation & Point
     getPacmanAnimation();
     getGhostAnimation();
+
+    //Play opening music
+    RenderGame();
+    Mix_PlayChannel(1, opening, 0);
+    while(Mix_Playing(1) != 0)
+    {
+        SDL_Delay(200);
+    }
+
+    //Play theme music
+    Mix_PlayMusic( theme, -1 );
 
     //Game loop
     while( !quit )

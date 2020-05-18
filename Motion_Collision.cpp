@@ -74,11 +74,13 @@ void Motion_Collision(bool& quit)
             {
                 if (pacman.eatCherry == true)   //Pacman eats ghosts
                 {
-                    Score += 200;
+                    Mix_PlayChannelTimed(-1, eatghost, 0, 1000);
+                    Score += 100;
                     ghost[i].timeDeath = SDL_GetTicks();
                 }
                 if (pacman.eatCherry == false)  //Pacman dies
                 {
+                    Mix_PlayChannel(-1, die, 0);
                     pacman.Lives -= 1;
                     pacman.isDead = true;
                     break;
@@ -98,8 +100,9 @@ void Motion_Collision(bool& quit)
             SDL_Rect B;
             B.x = pointX[rowi][coli] + 18;   B.y = pointY[rowi][coli] + 18;
             B.w = 20;   B.h = 20;
-            if (checkCollision(A, B))
+            if (checkCollision(A, B))   // Pacman eats point
             {
+                Mix_PlayChannelTimed(-1, eatpoint, 0, 500);
                 isEateanPoint[rowi][coli] = true;
                 Score += 10;
             }
@@ -120,8 +123,10 @@ void Motion_Collision(bool& quit)
             {
                 cherryX[i] = -1;
                 cherryY[i] = -1;
-                Score += 100;
+                Score += 50;
                 pacman.eatCherry = true;
+                Mix_HaltMusic();
+                Mix_PlayChannel(-1, pacmaneatcherry, 0);
                 pacman.timeEatCherry = SDL_GetTicks();
             }
         }
@@ -131,7 +136,10 @@ void Motion_Collision(bool& quit)
         {
             int nowTime = SDL_GetTicks();
             if ((nowTime - pacman.timeEatCherry) / 1000 >= 10)
+            {
                 pacman.eatCherry = false;
+                Mix_PlayMusic( theme, -1 );
+            }
         }
         for (int i = 1; i <= 4; i++)
             if (ghost[i].timeDeath != -1)

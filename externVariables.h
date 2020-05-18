@@ -1,6 +1,7 @@
 #include "LTexture.h"
 #include "pacman.h"
 #include "ghost.h"
+#include <SDL_mixer.h>
 
 //Screen dimension constants
 const int SCREEN_WIDTH = 1100;
@@ -34,3 +35,9 @@ extern int cherryX[5];
 extern int cherryY[5];
 extern TTF_Font *gFont;
 extern LTexture Text;
+extern Mix_Music *theme;
+extern Mix_Chunk *die;
+extern Mix_Chunk *eatghost;
+extern Mix_Chunk *eatpoint;
+extern Mix_Chunk *opening;
+extern Mix_Chunk *pacmaneatcherry;
