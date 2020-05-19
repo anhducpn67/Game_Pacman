@@ -241,6 +241,7 @@ void Pacman::render()
         framesDeath++;
         if (framesDeath / 9 >= 14)  // Pacman reset
         {
+            Mix_PlayMusic( theme, -1 );
             framesDeath = 0;
             pacman.isDead = false;
             pacman.reset();

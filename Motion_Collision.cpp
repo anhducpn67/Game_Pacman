@@ -80,6 +80,7 @@ void Motion_Collision(bool& quit)
                 }
                 if (pacman.eatCherry == false)  //Pacman dies
                 {
+                    Mix_HaltMusic();
                     Mix_PlayChannel(-1, die, 0);
                     pacman.Lives -= 1;
                     pacman.isDead = true;

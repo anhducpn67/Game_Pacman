@@ -12,8 +12,8 @@ class Pacman
 {
     public:
 		//The dimensions of Pacman
-		static const int PACMAN_WIDTH = 40;
-		static const int PACMAN_HEIGHT = 40;
+		static const int PACMAN_WIDTH = 43;
+		static const int PACMAN_HEIGHT = 43;
 
 		//Maximum axis velocity of Pacman
 		static const int PACMAN_VEL = 3;

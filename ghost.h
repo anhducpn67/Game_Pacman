@@ -10,8 +10,8 @@ class Ghost
 {
     public:
 		//The dimensions of the Ghost
-		static const int GHOST_WIDTH = 40;
-		static const int GHOST_HEIGHT = 40;
+		static const int GHOST_WIDTH = 43;
+		static const int GHOST_HEIGHT = 43;
 
 		//Maximum axis velocity of the Ghost
 		static const int GHOST_VEL = 3;
