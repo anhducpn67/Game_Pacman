@@ -1,2 +1,4 @@
 Project_Pacman.*
 cmake-build-debug/*
+.idea/*
+CMakeLists.txt
