@@ -328,7 +328,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1561870368 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2_image-2.0.5\i686-w64-mingw32\include\sdl2\sdl_image.h
+1589997838 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2_image-2.0.5\i686-w64-mingw32\include\sdl2\sdl_image.h
 	"SDL.h"
 	"SDL_version.h"
 	"begin_code.h"
@@ -346,7 +346,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1583890677 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl.h
+1589997837 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl.h
 	"SDL_main.h"
 	"SDL_stdinc.h"
 	"SDL_assert.h"
@@ -380,12 +380,12 @@
 	"begin_code.h"
 	"close_code.h"
 
-1583890677 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_main.h
+1589997837 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_main.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1583890678 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_stdinc.h
+1589997837 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_stdinc.h
 	"SDL_config.h"
 	<sys/types.h>
 	<stdio.h>
@@ -414,27 +414,27 @@
 	"begin_code.h"
 	"close_code.h"
 
-1583890678 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_config.h
+1589997837 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_config.h
 	"SDL_platform.h"
 
-1583890677 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_platform.h
+1589997837 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_platform.h
 	"AvailabilityMacros.h"
 	"TargetConditionals.h"
 	<winapifamily.h>
 	"begin_code.h"
 	"close_code.h"
 
-1583890678 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\begin_code.h
+1589997837 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\begin_code.h
 
-1583890678 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\close_code.h
+1589997837 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\close_code.h
 
-1583890677 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_assert.h
+1589997837 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_assert.h
 	"SDL_config.h"
 	"begin_code.h"
 	<signal.h>
 	"close_code.h"
 
-1583890677 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_atomic.h
+1589997837 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_atomic.h
 	"SDL_stdinc.h"
 	"SDL_platform.h"
 	"begin_code.h"
@@ -442,7 +442,7 @@
 	<mbarrier.h>
 	"close_code.h"
 
-1583890677 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_audio.h
+1589997837 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_audio.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_endian.h"
@@ -452,25 +452,25 @@
 	"begin_code.h"
 	"close_code.h"
 
-1583890677 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_error.h
+1589997837 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_error.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1583890677 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_endian.h
+1589997837 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_endian.h
 	"SDL_stdinc.h"
 	<endian.h>
 	<endian.h>
 	"begin_code.h"
 	"close_code.h"
 
-1583890677 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_mutex.h
+1589997837 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_mutex.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1583890678 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_thread.h
+1589997837 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_thread.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_atomic.h"
@@ -481,18 +481,18 @@
 	<stdlib.h>
 	"close_code.h"
 
-1583890677 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_rwops.h
+1589997837 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_rwops.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1583890677 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_clipboard.h
+1589997837 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_clipboard.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1583890677 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_cpuinfo.h
+1589997837 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_cpuinfo.h
 	"SDL_stdinc.h"
 	<intrin.h>
 	<intrin.h>
@@ -511,7 +511,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1583890677 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_events.h
+1589997837 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_events.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_video.h"
@@ -525,7 +525,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1583890678 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_video.h
+1589997837 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_video.h
 	"SDL_stdinc.h"
 	"SDL_pixels.h"
 	"SDL_rect.h"
@@ -533,13 +533,13 @@
 	"begin_code.h"
 	"close_code.h"
 
-1583890677 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_pixels.h
+1589997837 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_pixels.h
 	"SDL_stdinc.h"
 	"SDL_endian.h"
 	"begin_code.h"
 	"close_code.h"
 
-1583890677 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_rect.h
+1589997837 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_rect.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_pixels.h"
@@ -547,7 +547,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1583890678 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_surface.h
+1589997837 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_surface.h
 	"SDL_stdinc.h"
 	"SDL_pixels.h"
 	"SDL_rect.h"
@@ -556,11 +556,11 @@
 	"begin_code.h"
 	"close_code.h"
 
-1583890677 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_blendmode.h
+1589997837 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_blendmode.h
 	"begin_code.h"
 	"close_code.h"
 
-1583890677 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_keyboard.h
+1589997837 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_keyboard.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_keycode.h"
@@ -568,27 +568,27 @@
 	"begin_code.h"
 	"close_code.h"
 
-1583890677 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_keycode.h
+1589997837 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_keycode.h
 	"SDL_stdinc.h"
 	"SDL_scancode.h"
 
-1583890678 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_scancode.h
+1589997837 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_scancode.h
 	"SDL_stdinc.h"
 
-1583890677 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_mouse.h
+1589997837 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_mouse.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_video.h"
 	"begin_code.h"
 	"close_code.h"
 
-1583890677 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_joystick.h
+1589997837 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_joystick.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1583890677 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_gamecontroller.h
+1589997837 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_gamecontroller.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_rwops.h"
@@ -596,11 +596,11 @@
 	"begin_code.h"
 	"close_code.h"
 
-1583890677 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_quit.h
+1589997837 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_quit.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 
-1583890677 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_gesture.h
+1589997837 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_gesture.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_video.h"
@@ -608,71 +608,71 @@
 	"begin_code.h"
 	"close_code.h"
 
-1583890678 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_touch.h
+1589997837 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_touch.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_video.h"
 	"begin_code.h"
 	"close_code.h"
 
-1583890677 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_filesystem.h
+1589997837 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_filesystem.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1583890677 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_haptic.h
+1589997837 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_haptic.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_joystick.h"
 	"begin_code.h"
 	"close_code.h"
 
-1583890677 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_hints.h
+1589997837 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_hints.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1583890677 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_loadso.h
+1589997837 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_loadso.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1583890677 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_log.h
+1589997837 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_log.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1583890677 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_messagebox.h
+1589997837 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_messagebox.h
 	"SDL_stdinc.h"
 	"SDL_video.h"
 	"begin_code.h"
 	"close_code.h"
 
-1583890677 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_metal.h
+1589997837 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_metal.h
 	"SDL_video.h"
 	"begin_code.h"
 	"close_code.h"
 
-1583890677 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_power.h
+1589997837 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_power.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1583890677 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_render.h
+1589997837 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_render.h
 	"SDL_stdinc.h"
 	"SDL_rect.h"
 	"SDL_video.h"
 	"begin_code.h"
 	"close_code.h"
 
-1583890678 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_sensor.h
+1589997837 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_sensor.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1583890678 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_shape.h
+1589997837 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_shape.h
 	"SDL_stdinc.h"
 	"SDL_pixels.h"
 	"SDL_rect.h"
@@ -681,7 +681,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1583890678 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_system.h
+1589997837 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_system.h
 	"SDL_stdinc.h"
 	"SDL_keyboard.h"
 	"SDL_render.h"
@@ -689,13 +689,13 @@
 	"begin_code.h"
 	"close_code.h"
 
-1583890678 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_timer.h
+1589997837 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_timer.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1583890678 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_version.h
+1589997837 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2-2.0.12\i686-w64-mingw32\include\sdl2\sdl_version.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
@@ -722,12 +722,12 @@
 	<bits/stdc++.h>
 	<SDL.h>
 
-1588517116 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2_ttf-2.0.15\i686-w64-mingw32\include\sdl2\sdl_ttf.h
+1589997838 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2_ttf-2.0.15\i686-w64-mingw32\include\sdl2\sdl_ttf.h
 	"SDL.h"
 	"begin_code.h"
 	"close_code.h"
 
-1589995711 source:c:\users\anhduc\desktop\study\ltnc\project_pacman\ltexture.cpp
+1589997838 source:c:\users\anhduc\desktop\study\ltnc\project_pacman\ltexture.cpp
 	"LTexture.h"
 
 1589508653 c:\users\anhduc\desktop\study\ltnc\project_pacman\ltexture.h
@@ -737,13 +737,13 @@
 	<stdio.h>
 	<SDL_ttf.h>
 
-1589995690 c:\users\anhduc\desktop\study\ltnc\project_pacman\externvariables.h
+1589997838 c:\users\anhduc\desktop\study\ltnc\project_pacman\externvariables.h
 	"LTexture.h"
 	"pacman.h"
 	"ghost.h"
 	<SDL_mixer.h>
 
-1589997429 source:c:\users\anhduc\desktop\study\ltnc\project_pacman\maingame.cpp
+1589997838 source:c:\users\anhduc\desktop\study\ltnc\project_pacman\maingame.cpp
 	"LTexture.h"
 	"pacman.h"
 	"creatWallandPoint.h"
@@ -752,7 +752,7 @@
 	"renderGame.h"
 	"Motion_Collision.h"
 
-1589994345 c:\users\anhduc\desktop\study\ltnc\project_pacman\pacman.h
+1589997838 c:\users\anhduc\desktop\study\ltnc\project_pacman\pacman.h
 	<SDL.h>
 	<SDL_image.h>
 	<stdio.h>
@@ -769,12 +769,12 @@
 	<stdio.h>
 	<SDL_ttf.h>
 
-1589994450 source:c:\users\anhduc\desktop\study\ltnc\project_pacman\ghost.cpp
+1589997838 source:c:\users\anhduc\desktop\study\ltnc\project_pacman\ghost.cpp
 	"ghost.h"
 	"externVariables.h"
 	"Motion_Collision.h"
 
-1589994205 c:\users\anhduc\desktop\study\ltnc\project_pacman\ghost.h
+1589997838 c:\users\anhduc\desktop\study\ltnc\project_pacman\ghost.h
 	<SDL.h>
 	<SDL_image.h>
 	<stdio.h>
@@ -787,7 +787,7 @@
 	"externVariables.h"
 	"Motion_Collision.h"
 
-1589995790 source:c:\users\anhduc\desktop\study\ltnc\project_pacman\initclosesdl.cpp
+1589997838 source:c:\users\anhduc\desktop\study\ltnc\project_pacman\initclosesdl.cpp
 	"InitCloseSDL.h"
 	"externVariables.h"
 
@@ -798,18 +798,18 @@
 	<SDL_ttf.h>
 	<SDL_mixer.h>
 
-1589996850 source:c:\users\anhduc\desktop\study\ltnc\project_pacman\rendergame.cpp
+1589997838 source:c:\users\anhduc\desktop\study\ltnc\project_pacman\rendergame.cpp
 	"renderGame.h"
 	"externVariables.h"
 	"creatWallandPoint.h"
 
-1589996272 c:\users\anhduc\desktop\study\ltnc\project_pacman\rendergame.h
+1589997838 c:\users\anhduc\desktop\study\ltnc\project_pacman\rendergame.h
 	<SDL.h>
 	<SDL_image.h>
 	<stdio.h>
 	<SDL_ttf.h>
 
-1589997419 source:c:\users\anhduc\desktop\study\ltnc\project_pacman\motion_collision.cpp
+1589997535 source:c:\users\anhduc\desktop\study\ltnc\project_pacman\motion_collision.cpp
 	"Motion_Collision.h"
 	"creatWallandPoint.h"
 	"externVariables.h"
@@ -820,7 +820,7 @@
 	<stdio.h>
 	<SDL_ttf.h>
 
-1540997992 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2_mixer-2.0.4\i686-w64-mingw32\include\sdl2\sdl_mixer.h
+1589997838 c:\users\anhduc\desktop\study\ltnc\project_pacman\extendedlib\sdl2_mixer-2.0.4\i686-w64-mingw32\include\sdl2\sdl_mixer.h
 	"SDL_stdinc.h"
 	"SDL_rwops.h"
 	"SDL_audio.h"
