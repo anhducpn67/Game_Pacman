@@ -63,7 +63,7 @@ void Motion_Collision(bool& quit)
         for (int i = 1; i <= 4; i++)
         {
             if (ghost[i].timeDeath != -1)   continue;
-            int numbersPixel = 20;
+            int numbersPixel = 27;
             SDL_Rect A = pacman.mCollider;
             A.w -= numbersPixel;  A.h -= numbersPixel;
             A.x += numbersPixel;  A.y += numbersPixel;
