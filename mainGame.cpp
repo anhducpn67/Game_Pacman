@@ -15,21 +15,20 @@ int main( int argc, char* args[] )
 	//Start up SDL and create window
 	if( !init() )
 	{
-		printf( "Failed to initialize!\n" );
-		return 0;
-	}
+        printf("Failed to initialize!\n");
+        return 0;
+    }
     //Load media
-    if( !loadMedia() )
-    {
-        printf( "Failed to load media!\n" );
+    if (!loadMedia()) {
+        printf("Failed to load media!\n");
         return 0;
     }
     //Load sound
-    if( !loadSound() )
-    {
-        printf( "Failed to load music!\n" );
-        return 0;
-    }
+//    if( !loadSound() )
+//    {
+//        printf( "Failed to load music!\n" );
+//        return 0;
+//    }
 
     //Main loop flag
     bool quit = false;
