@@ -53,14 +53,14 @@ void Motion_Collision(bool& quit)
 
         //Move the Pacman, Ghost and check collision
         pacman.move( wall, numbers_Wall);
-        for (int i = 1; i <= 4; i++)
+        for (int i = 1; i <= numberGhosts; i++)
         {
-            ghost[i].move(wall, numbers_Wall);
             ghost[i].handleEvent();
+            ghost[i].move(wall, numbers_Wall);
         }
 
         //Check if pacman hit Ghost
-        for (int i = 1; i <= 4; i++)
+        for (int i = 1; i <= numberGhosts; i++)
         {
             if (ghost[i].timeDeath != -1)   continue;
             int numbersPixel = 27;
@@ -142,7 +142,7 @@ void Motion_Collision(bool& quit)
                 Mix_PlayMusic( theme, -1 );
             }
         }
-        for (int i = 1; i <= 4; i++)
+        for (int i = 1; i <= numberGhosts; i++)
             if (ghost[i].timeDeath != -1)
             {
                 int nowTime = SDL_GetTicks();

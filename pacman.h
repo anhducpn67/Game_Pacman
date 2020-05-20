@@ -5,6 +5,7 @@
 #include <SDL_image.h>
 #include <stdio.h>
 #include <SDL_ttf.h>
+#include "ghost.h"
 
 using namespace std;
 
@@ -12,7 +13,7 @@ class Pacman
 {
     public:
 		//The dimensions of Pacman
-		static const int PACMAN_WIDTH = 45;
+		static const int PACMAN_WIDTH  = 45;
 		static const int PACMAN_HEIGHT = 45;
 
 		//Maximum axis velocity of Pacman
@@ -57,6 +58,9 @@ class Pacman
 
 		//The velocity of the Pacman
 		int mVelX, mVelY;
+
+    friend int Ghost::directChasing();
+    friend void Ghost::handleEvent();
 };
 
 void getPacmanAnimation();

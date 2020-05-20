@@ -10,7 +10,7 @@ class Ghost
 {
     public:
 		//The dimensions of the Ghost
-		static const int GHOST_WIDTH = 45;
+		static const int GHOST_WIDTH  = 45;
 		static const int GHOST_HEIGHT = 45;
 
 		//Maximum axis velocity of the Ghost
@@ -42,6 +42,9 @@ class Ghost
 
 		//Ghost's collision box
         SDL_Rect mCollider;
+
+        // Direct for chasing pacman
+        int directChasing();
 
     private:
 		//The X and Y offsets of the Ghost

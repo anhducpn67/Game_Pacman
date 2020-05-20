@@ -46,8 +46,17 @@ void Ghost::resetGhost()
     isBlock = false;
 }
 
+int Distance(int X1, int Y1, int X2, int Y2)
+{
+    return (X1 - X2) * (X1 - X2) + (Y1 - Y2) * (Y1 - Y2);
+}
+
 void Ghost::handleEvent()
 {
+    if (Distance(pacman.mPosX, pacman.mPosY, mPosX, mPosY) <= 15000)
+    {
+        direct = directChasing();
+    }
     if (isBlock == true)
         direct = rand() % 4;
     switch(direct)
@@ -79,6 +88,38 @@ void Ghost::handleEvent()
     };
 }
 
+bool canMove(SDL_Rect ghost_temp, SDL_Rect wall[], int numbers_Wall)
+{
+    for (int i = 1; i <= numbers_Wall; i++)
+        if (checkCollision(ghost_temp, wall[i]))    return false;
+    return true;
+}
+
+int Ghost::directChasing()
+{
+    int dx[] = {GHOST_VEL, 0        , -GHOST_VEL, 0         };
+    int dy[] = {0        , GHOST_VEL, 0         , -GHOST_VEL};
+    int directChase = 0;
+    int distanceMin = 1e9 + 7;
+    for (int i = 0; i < 4; i++)
+    {
+        int X = mPosX + dx[i];
+        int Y = mPosY + dy[i];
+        if( ( X < 0 ) || ( X + GHOST_WIDTH > 800 ) || (Y < 0) || ( mPosY + GHOST_HEIGHT > SCREEN_HEIGHT )) continue;
+        SDL_Rect ghost_temp;
+        ghost_temp.x = X;             ghost_temp.y = Y;
+        ghost_temp.w = GHOST_WIDTH;   ghost_temp.h = GHOST_HEIGHT;
+        if (Distance(X, Y, pacman.mPosX, pacman.mPosY) < distanceMin && canMove(ghost_temp, wall, numbers_Wall) == true)
+        {
+            distanceMin = Distance(X, Y, pacman.mPosX, pacman.mPosY);
+            directChase = i;
+        }
+    }
+    return directChase;
+}
+
+
+
 void Ghost::move( SDL_Rect wall[], int numbers_Wall)
 {
     isBlock = false;
@@ -92,7 +133,7 @@ void Ghost::move( SDL_Rect wall[], int numbers_Wall)
         checkColl |= checkCollision(mCollider, wall[i]);
 
     //If Ghost went too far to the left or right
-    if( ( mPosX < 0 ) || ( mPosX + GHOST_WIDTH > SCREEN_WIDTH ) || checkColl)
+    if( ( mPosX < 0 ) || ( mPosX + GHOST_WIDTH > 800 ) || checkColl)
     {
         //Move back
         mPosX -= mVelX;

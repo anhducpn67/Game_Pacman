@@ -130,7 +130,7 @@ void Pacman::move( SDL_Rect wall[], int numbers_Wall)
     }
 
     //If Pacman went too far to the left or right
-    if( ( mPosX < 0 ) || ( mPosX + PACMAN_WIDTH > SCREEN_WIDTH ) || checkColl)
+    if( ( mPosX < 0 ) || ( mPosX + PACMAN_WIDTH > 800 ) || checkColl)
     {
         //Move back
         mPosX -= mVelX;

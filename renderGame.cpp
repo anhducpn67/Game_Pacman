@@ -3,6 +3,7 @@
 
 void RenderGame()
 {
+
     //Clear screen
     SDL_SetRenderDrawColor( gRenderer, 0, 0, 0, 255 );
     SDL_RenderClear( gRenderer );
