@@ -1,5 +1,6 @@
 #include "renderGame.h"
 #include "externVariables.h"
+#include "creatWallandPoint.h"
 
 void RenderGame()
 {
@@ -51,4 +52,72 @@ void RenderGame()
 
     //Update screen
     SDL_RenderPresent( gRenderer );
+}
+
+void resetEverything()
+{
+    //Create Walls
+    createWalls();
+    createPoint();
+
+    //Create Pacman & Ghost Animation & Point
+    getPacmanAnimation();
+    getGhostAnimation();
+
+    //Reset frames and score
+    frames = 0;
+    Score = 0;
+
+    //Reset ghost and pacman
+    pacman.reset();
+	pacman.direct = 0;
+    pacman.Lives = 3;
+	pacman.eatCherry = false;
+    pacman.timeEatCherry = 0;
+
+    for (int i = 1; i <= numberGhosts; i++)
+        ghost[i].resetGhost();
+
+    //Play opening music
+    RenderGame();
+    Mix_PlayChannel(1, opening, 0);
+    while(Mix_Playing(1) != 0)
+    {
+        SDL_Delay(200);
+    }
+
+    //Play theme music
+    Mix_PlayMusic( theme, -1 );
+}
+
+void isPlayAgain(bool& quit)
+{
+    SDL_Event e;
+    while(true)
+    {
+        while( SDL_PollEvent( &e ) != 0 )
+        {
+            if( e.type == SDL_KEYDOWN)
+            {
+                switch( e.key.keysym.sym )
+                {
+                    case SDLK_y:
+                    {
+                        quit = false;
+                        resetEverything();
+                        return;
+                    }
+                    case SDLK_n:
+                    {
+                        return;
+                    }
+                }
+            }
+        }
+        //Clear screen
+        SDL_SetRenderDrawColor( gRenderer, 0, 0, 0, 255 );
+        SDL_RenderClear( gRenderer );
+        gameOver.render(0, 0);
+        SDL_RenderPresent( gRenderer );
+    }
 }

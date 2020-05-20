@@ -12,6 +12,9 @@ LTexture background;
 //Pacman and ghost Texture
 LTexture sprites;
 
+//Game Over
+LTexture gameOver;
+
 //Globally used font
 TTF_Font *gFont = NULL;
 

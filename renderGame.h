@@ -7,5 +7,6 @@
 #include <SDL_ttf.h>
 
 void RenderGame();
+void isPlayAgain(bool& quit);
 
 #endif // RENDERGAME_H

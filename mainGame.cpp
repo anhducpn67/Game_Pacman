@@ -31,6 +31,7 @@ int main( int argc, char* args[] )
         return 0;
     }
 
+
     //Main loop flag
     bool quit = false;
 
@@ -65,10 +66,9 @@ int main( int argc, char* args[] )
         //Render Game
         RenderGame();
 
-        //End game
         if (quit == true)
         {
-
+            isPlayAgain(quit);
         }
     }
 

@@ -706,7 +706,7 @@
 
 1587568579 D
 
-1589965425 source:c:\users\anhduc\desktop\study\ltnc\project_pacman\pacman.cpp
+1589997132 source:c:\users\anhduc\desktop\study\ltnc\project_pacman\pacman.cpp
 	"pacman.h"
 	"externVariables.h"
 	"Motion_Collision.h"
@@ -727,7 +727,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1589618961 source:c:\users\anhduc\desktop\study\ltnc\project_pacman\ltexture.cpp
+1589995711 source:c:\users\anhduc\desktop\study\ltnc\project_pacman\ltexture.cpp
 	"LTexture.h"
 
 1589508653 c:\users\anhduc\desktop\study\ltnc\project_pacman\ltexture.h
@@ -737,13 +737,13 @@
 	<stdio.h>
 	<SDL_ttf.h>
 
-1589965364 c:\users\anhduc\desktop\study\ltnc\project_pacman\externvariables.h
+1589995690 c:\users\anhduc\desktop\study\ltnc\project_pacman\externvariables.h
 	"LTexture.h"
 	"pacman.h"
 	"ghost.h"
 	<SDL_mixer.h>
 
-1589799793 source:c:\users\anhduc\desktop\study\ltnc\project_pacman\maingame.cpp
+1589997429 source:c:\users\anhduc\desktop\study\ltnc\project_pacman\maingame.cpp
 	"LTexture.h"
 	"pacman.h"
 	"creatWallandPoint.h"
@@ -752,7 +752,7 @@
 	"renderGame.h"
 	"Motion_Collision.h"
 
-1589964918 c:\users\anhduc\desktop\study\ltnc\project_pacman\pacman.h
+1589994345 c:\users\anhduc\desktop\study\ltnc\project_pacman\pacman.h
 	<SDL.h>
 	<SDL_image.h>
 	<stdio.h>
@@ -769,12 +769,12 @@
 	<stdio.h>
 	<SDL_ttf.h>
 
-1589965516 source:c:\users\anhduc\desktop\study\ltnc\project_pacman\ghost.cpp
+1589994450 source:c:\users\anhduc\desktop\study\ltnc\project_pacman\ghost.cpp
 	"ghost.h"
 	"externVariables.h"
 	"Motion_Collision.h"
 
-1589964922 c:\users\anhduc\desktop\study\ltnc\project_pacman\ghost.h
+1589994205 c:\users\anhduc\desktop\study\ltnc\project_pacman\ghost.h
 	<SDL.h>
 	<SDL_image.h>
 	<stdio.h>
@@ -782,12 +782,12 @@
 
 1589598972 c:\users\anhduc\desktop\study\ltnc\project_pacman\creatwallandpoint.h
 
-1589617252 source:c:\users\anhduc\desktop\study\ltnc\project_pacman\creatwallandpoint.cpp
+1589981694 source:c:\users\anhduc\desktop\study\ltnc\project_pacman\creatwallandpoint.cpp
 	"creatWallandPoint.h"
 	"externVariables.h"
 	"Motion_Collision.h"
 
-1589799793 source:c:\users\anhduc\desktop\study\ltnc\project_pacman\initclosesdl.cpp
+1589995790 source:c:\users\anhduc\desktop\study\ltnc\project_pacman\initclosesdl.cpp
 	"InitCloseSDL.h"
 	"externVariables.h"
 
@@ -798,17 +798,18 @@
 	<SDL_ttf.h>
 	<SDL_mixer.h>
 
-1589723776 source:c:\users\anhduc\desktop\study\ltnc\project_pacman\rendergame.cpp
+1589996850 source:c:\users\anhduc\desktop\study\ltnc\project_pacman\rendergame.cpp
 	"renderGame.h"
 	"externVariables.h"
+	"creatWallandPoint.h"
 
-1589723776 c:\users\anhduc\desktop\study\ltnc\project_pacman\rendergame.h
+1589996272 c:\users\anhduc\desktop\study\ltnc\project_pacman\rendergame.h
 	<SDL.h>
 	<SDL_image.h>
 	<stdio.h>
 	<SDL_ttf.h>
 
-1589964635 source:c:\users\anhduc\desktop\study\ltnc\project_pacman\motion_collision.cpp
+1589997419 source:c:\users\anhduc\desktop\study\ltnc\project_pacman\motion_collision.cpp
 	"Motion_Collision.h"
 	"creatWallandPoint.h"
 	"externVariables.h"
