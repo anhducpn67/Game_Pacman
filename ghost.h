@@ -46,6 +46,9 @@ class Ghost
         // Direct for chasing pacman
         int directChasing();
 
+        // Direct for run away
+        int directRunAway();
+
     private:
 		//The X and Y offsets of the Ghost
 		int mPosX, mPosY;

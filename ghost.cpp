@@ -55,7 +55,10 @@ void Ghost::handleEvent()
 {
     if (Distance(pacman.mPosX, pacman.mPosY, mPosX, mPosY) <= 15000)
     {
-        direct = directChasing();
+        if (pacman.eatCherry == false)
+            direct = directChasing();
+        if (pacman.eatCherry == true)
+            direct = directRunAway();
     }
     if (isBlock == true)
         direct = rand() % 4;
@@ -118,6 +121,28 @@ int Ghost::directChasing()
     return directChase;
 }
 
+int Ghost::directRunAway()
+{
+    int dx[] = {GHOST_VEL, 0        , -GHOST_VEL, 0         };
+    int dy[] = {0        , GHOST_VEL, 0         , -GHOST_VEL};
+    int directRunAway = 0;
+    int distanceMax = 0;
+    for (int i = 0; i < 4; i++)
+    {
+        int X = mPosX + dx[i];
+        int Y = mPosY + dy[i];
+        if( ( X < 0 ) || ( X + GHOST_WIDTH > 800 ) || (Y < 0) || ( mPosY + GHOST_HEIGHT > SCREEN_HEIGHT )) continue;
+        SDL_Rect ghost_temp;
+        ghost_temp.x = X;             ghost_temp.y = Y;
+        ghost_temp.w = GHOST_WIDTH;   ghost_temp.h = GHOST_HEIGHT;
+        if (Distance(X, Y, pacman.mPosX, pacman.mPosY) > distanceMax && canMove(ghost_temp, wall, numbers_Wall) == true)
+        {
+            distanceMax = Distance(X, Y, pacman.mPosX, pacman.mPosY);
+            directRunAway = i;
+        }
+    }
+    return directRunAway;
+}
 
 
 void Ghost::move( SDL_Rect wall[], int numbers_Wall)

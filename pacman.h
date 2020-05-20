@@ -61,6 +61,7 @@ class Pacman
 
     friend int Ghost::directChasing();
     friend void Ghost::handleEvent();
+    friend int Ghost::directRunAway();
 };
 
 void getPacmanAnimation();

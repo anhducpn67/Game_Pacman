@@ -41,3 +41,4 @@ extern Mix_Chunk *eatghost;
 extern Mix_Chunk *eatpoint;
 extern Mix_Chunk *opening;
 extern Mix_Chunk *pacmaneatcherry;
+extern LTexture gameOver;

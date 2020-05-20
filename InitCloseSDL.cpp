@@ -85,12 +85,18 @@ bool loadMedia()
 		printf( "Failed to load sprites texture!\n" );
 		success = false;
 	}
-	 //Load Background
-	 if( !background.loadFromFile("Images/background.jpg") )
+    //Load Background
+    if( !background.loadFromFile("Images/background.jpg") )
 	{
 		printf( "Failed to load background texture!\n" );
 		success = false;
 	}
+	//Load Game Over
+	if (!gameOver.loadFromFile("Images/gameover.jpg"))
+    {
+        printf( "Failed to load background texture!\n" );
+		success = false;
+    }
 	return success;
 }
 
