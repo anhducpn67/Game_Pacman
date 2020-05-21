@@ -49,34 +49,36 @@ bool checkCollision( SDL_Rect& a, SDL_Rect& b )
 void Motion_Collision(bool& quit)
 {
 
-        if (pacman.isDead == true)  return;
+    if (pacman.isDead == true) return;
 
-        //Move the Pacman, Ghost and check collision
-        pacman.move( wall, numbers_Wall);
-        for (int i = 1; i <= numberGhosts; i++)
-        {
-            ghost[i].handleEvent();
-            ghost[i].move(wall, numbers_Wall);
-        }
+    //Move the Pacman, Ghost and check collision
+    pacman.move(walls, NUMBER_WALLS);
+    for (int i = 1; i <= NUMBER_GHOSTS; i++) {
+        ghosts[i].handleEvent();
+        ghosts[i].move(walls, NUMBER_WALLS);
+    }
 
-        //Check if pacman hit Ghost
-        for (int i = 1; i <= numberGhosts; i++)
-        {
-            if (ghost[i].timeDeath != -1)   continue;
-            int numbersPixel = 27;
-            SDL_Rect A = pacman.mCollider;
-            A.w -= numbersPixel;  A.h -= numbersPixel;
-            A.x += numbersPixel;  A.y += numbersPixel;
-            SDL_Rect B = ghost[i].mCollider;
-            B.w -= numbersPixel;   B.h -= numbersPixel;
-            B.x += numbersPixel;   B.y += numbersPixel;
-            if (checkCollision(A, B))
+    //Check if pacman hit Ghost
+    for (int i = 1; i <= NUMBER_GHOSTS; i++) {
+        if (ghosts[i].timeDeath != -1) continue;
+        int numbersPixel = 27;
+        SDL_Rect A = pacman.mCollider;
+        A.w -= numbersPixel;
+        A.h -= numbersPixel;
+        A.x += numbersPixel;
+        A.y += numbersPixel;
+        SDL_Rect B = ghosts[i].mCollider;
+        B.w -= numbersPixel;
+        B.h -= numbersPixel;
+        B.x += numbersPixel;
+        B.y += numbersPixel;
+        if (checkCollision(A, B))
             {
                 if (pacman.eatCherry == true)   //Pacman eats ghosts
                 {
                     Mix_PlayChannelTimed(-1, eatghost, 0, 1000);
                     Score += 100;
-                    ghost[i].timeDeath = SDL_GetTicks();
+                    ghosts[i].timeDeath = SDL_GetTicks();
                 }
                 if (pacman.eatCherry == false)  //Pacman dies
                 {
@@ -84,23 +86,32 @@ void Motion_Collision(bool& quit)
                     Mix_PlayChannel(-1, die, 0);
                     pacman.Lives -= 1;
                     pacman.isDead = true;
+                    for (int ghostIndex = 0; ghostIndex < NUMBER_GHOSTS; ghostIndex++) {
+                        ghosts[ghostIndex].startTiredTime = 0;
+                        ghosts[ghostIndex].startChasingTime = 0;
+                        ghosts[ghostIndex].isTired = 0;
+                        ghosts[ghostIndex].isChasing = 0;
+                    }
                     break;
                 }
             }
-        }
+    }
 
-        //Check if Pacman eats point
-        for (int rowi = 1; rowi <= nRow; rowi++)
-        for (int coli = 1; coli <= nCol; coli++)
-        {
-            if (isEateanPoint[rowi][coli])   continue;
+    //Check if Pacman eats point
+    for (int rowi = 1; rowi <= NUMBER_ROW; rowi++)
+        for (int coli = 1; coli <= NUMBER_COL; coli++) {
+            if (isEateanPoint[rowi][coli]) continue;
             int numbersPixel = 20;
             SDL_Rect A = pacman.mCollider;
-            A.w -= numbersPixel;  A.h -= numbersPixel;
-            A.x += numbersPixel;  A.y += numbersPixel;
+            A.w -= numbersPixel;
+            A.h -= numbersPixel;
+            A.x += numbersPixel;
+            A.y += numbersPixel;
             SDL_Rect B;
-            B.x = pointX[rowi][coli] + 18;   B.y = pointY[rowi][coli] + 18;
-            B.w = 20;   B.h = 20;
+            B.x = pointX[rowi][coli] + 18;
+            B.y = pointY[rowi][coli] + 18;
+            B.w = 20;
+            B.h = 20;
             if (checkCollision(A, B))   // Pacman eats point
             {
                 Mix_PlayChannelTimed(-1, eatpoint, 0, 500);
@@ -125,47 +136,41 @@ void Motion_Collision(bool& quit)
                 cherryX[i] = -1;
                 cherryY[i] = -1;
                 Score += 50;
-                pacman.eatCherry = true;
+                pacman.doEatCherry();
                 Mix_HaltMusic();
                 Mix_PlayChannel(-1, pacmaneatcherry, 0);
-                pacman.timeEatCherry = SDL_GetTicks();
             }
         }
 
-        //Handle pacman ate cherry and time to reset ghosts
-        if (pacman.eatCherry == true)
-        {
+    //Handle pacman ate cherry and time to reset ghosts
+    if (pacman.eatCherry == true) {
+        int nowTime = SDL_GetTicks();
+        if ((nowTime - pacman.timeEatCherry) / 1000 >= 10) {
+            pacman.eatCherry = false;
+            Mix_PlayMusic(theme, -1);
+        }
+    }
+    for (int i = 1; i <= NUMBER_GHOSTS; i++)
+        if (ghosts[i].timeDeath != -1) {
             int nowTime = SDL_GetTicks();
-            if ((nowTime - pacman.timeEatCherry) / 1000 >= 10)
-            {
-                pacman.eatCherry = false;
-                Mix_PlayMusic( theme, -1 );
+            if ((nowTime - ghosts[i].timeDeath) / 1000 >= 5) {
+                ghosts[i].resetGhost();
+                ghosts[i].timeDeath = -1;
             }
         }
-        for (int i = 1; i <= numberGhosts; i++)
-            if (ghost[i].timeDeath != -1)
-            {
-                int nowTime = SDL_GetTicks();
-                if ((nowTime - ghost[i].timeDeath) / 1000 >= 5)
-                {
-                    ghost[i].resetGhost();
-                    ghost[i].timeDeath = -1;
-                }
-            }
 
-        //Check if all points is eaten
-        bool remain = false;
-        for (int rowi = 1; rowi <= nRow; rowi++)
-        for (int coli = 1; coli <= nCol; coli++)
+    //Check if all points is eaten
+    bool remain = false;
+    for (int rowi = 1; rowi <= NUMBER_ROW; rowi++)
+        for (int coli = 1; coli <= NUMBER_COL; coli++)
             if (isEateanPoint[rowi][coli] == false) remain = true;
-        if (remain == false) createPoint();
+    if (remain == false) createPoint();
 
-        // Update frames;
-        frames++;
-        if(frames / 4 >= 4 )
-        {
-            frames = 0;
-        }
+    // Update frames;
+    frames++;
+    if (frames / 4 >= 4) {
+        frames = 0;
+    }
 
         if (pacman.Lives == -1)
         {

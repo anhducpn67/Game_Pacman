@@ -69,27 +69,24 @@ bool init()
 bool loadMedia()
 {
 	//Loading success flag
-	bool success = true;
+    bool success = true;
 
-	//Open the font
-    gFont = TTF_OpenFont( "Fonts/pixel2.ttf", 28 );
-    if( gFont == NULL )
-    {
-        printf( "Failed to load font! SDL_ttf Error: %s\n", TTF_GetError() );
+    //Open the font
+    gFont = TTF_OpenFont("Fonts/pixel2.ttf", 28);
+    if (gFont == NULL) {
+        printf("Failed to load font! SDL_ttf Error: %s\n", TTF_GetError());
         success = false;
     }
 
-	//Load texture pacman and ghost
-	if( !sprites.loadFromFile( "Images/sprites2.png" ) )
-	{
-		printf( "Failed to load sprites texture!\n" );
-		success = false;
-	}
+    //Load texture pacman and ghosts
+    if (!sprites.loadFromFile("Images/sprites2.png")) {
+        printf("Failed to load sprites texture!\n");
+        success = false;
+    }
     //Load Background
-    if( !background.loadFromFile("Images/background.jpg") )
-	{
-		printf( "Failed to load background texture!\n" );
-		success = false;
+    if (!background.loadFromFile("Images/background.jpg")) {
+        printf("Failed to load background texture!\n");
+        success = false;
 	}
 	//Load Game Over
 	if (!gameOver.loadFromFile("Images/gameover.jpg"))
@@ -152,7 +149,7 @@ bool loadSound()
         success = false;
     }
 
-    pacmaneatcherry = Mix_LoadWAV("Sounds/ghost-turn-to-blue.mp3");
+    pacmaneatcherry = Mix_LoadWAV("Sounds/ghosts-turn-to-blue.mp3");
     if( pacmaneatcherry == NULL )
     {
         printf( "Failed to load low sound effect! SDL_mixer Error: %s\n", Mix_GetError() );

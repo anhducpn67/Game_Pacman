@@ -9,7 +9,7 @@ SDL_Renderer* gRenderer = NULL;
 // Background
 LTexture background;
 
-//Pacman and ghost Texture
+//Pacman and ghosts Texture
 LTexture sprites;
 
 //Game Over

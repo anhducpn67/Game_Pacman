@@ -6,10 +6,13 @@
 //Screen dimension constants
 const int SCREEN_WIDTH = 1100;
 const int SCREEN_HEIGHT = 888;
-const int numbers_Wall = 54;
-const int numberGhosts = 4;
-const int nCol = 25;
-const int nRow = 20;
+const int NUMBER_WALLS = 54;
+const int NUMBER_GHOSTS = 4;
+const int NUMBER_COL = 25;
+const int NUMBER_ROW = 20;
+const int CHASING_TIME = 6;
+const int TIRED_TIME = 3;
+const double PROB_CHANGE_DIRECTION = 0.2;
 
 //Direct
 const int Right = 0;
@@ -18,12 +21,12 @@ const int Left = 2;
 const int Up = 3;
 
 extern LTexture background;
-extern SDL_Window* gWindow;
-extern SDL_Renderer* gRenderer;
+extern SDL_Window *gWindow;
+extern SDL_Renderer *gRenderer;
 extern LTexture sprites;
 extern Pacman pacman;
-extern Ghost ghost[];
-extern SDL_Rect wall[];
+extern Ghost ghosts[];
+extern SDL_Rect walls[];
 extern int frames;
 extern SDL_Rect point;
 extern SDL_Rect cherry;

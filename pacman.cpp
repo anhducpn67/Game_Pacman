@@ -25,8 +25,13 @@ Pacman::Pacman()
     mVelY = 0;
 }
 
-void Pacman::reset()
-{
+void Pacman::doEatCherry() {
+    pacman.eatCherry = true;
+    pacman.timeEatCherry = SDL_GetTicks();
+}
+
+void Pacman::reset() {
+    doEatCherry();
     //Initialize the offsets
     mPosX = 20;
     mPosY = 20;
@@ -104,14 +109,12 @@ void Pacman::move( SDL_Rect wall[], int numbers_Wall)
             break;
         }
     }
-    if (posWall != -1) // If char is blocked by wall[posWall]
+    if (posWall != -1) // If char is blocked by walls[posWall]
     {
-        for (int movePixel = 1; movePixel <= 15; movePixel++)
-        {
+        for (int movePixel = 1; movePixel <= 15; movePixel++) {
             // Move char up movePixel pixels;
             mCollider.y -= movePixel;
-            if (checkCollision(mCollider, wall[posWall]) == false)
-            {
+            if (checkCollision(mCollider, wall[posWall]) == false) {
                 mPosX -= mVelX;
                 mPosY -= movePixel;
                 return;
@@ -154,14 +157,12 @@ void Pacman::move( SDL_Rect wall[], int numbers_Wall)
         }
     }
 
-    if (posWall != -1) // If Pacman is blocked by wall[posWall]
+    if (posWall != -1) // If Pacman is blocked by walls[posWall]
     {
-        for (int movePixel = 1; movePixel <= 15; movePixel++)
-        {
+        for (int movePixel = 1; movePixel <= 15; movePixel++) {
             // Move Pacman left movePixel pixels;
             mCollider.x -= movePixel;
-            if (checkCollision(mCollider, wall[posWall]) == false)
-            {
+            if (checkCollision(mCollider, wall[posWall]) == false) {
                 mPosY -= mVelY;
                 mPosX -= movePixel;
                 return;
