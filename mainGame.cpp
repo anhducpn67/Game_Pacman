@@ -65,12 +65,11 @@ int main( int argc, char* args[] )
         //Render Game
         RenderGame();
 
-        if (quit == true)
+        if (quit)
         {
             isPlayAgain(quit);
         }
     }
-
 	//Free resources and close SDL
 	close();
 	return 0;
