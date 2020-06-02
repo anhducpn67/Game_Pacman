@@ -6,36 +6,35 @@ void RenderGame()
 {
 
     //Clear screen
-    SDL_SetRenderDrawColor( gRenderer, 0, 0, 0, 255 );
-    SDL_RenderClear( gRenderer );
+    SDL_SetRenderDrawColor(gRenderer, 0, 0, 0, 255);
+    SDL_RenderClear(gRenderer);
 
-    //Render wall
-    for (int i = 1; i <= numbers_Wall; i++)
-        SDL_RenderDrawRect( gRenderer, &wall[i] );
+    //Render walls
+    for (int i = 1; i <= NUMBER_WALLS; i++)
+        SDL_RenderDrawRect(gRenderer, &walls[i]);
 
     //Render background
     background.render(0, 0);
 
     //Render cherry
-    for (int i = 1; i <= 4; i++)
-    {
-        if (cherryX[i] == -1 && cherryY[i] == -1)   continue;
+    for (int i = 1; i <= 4; i++) {
+        if (cherryX[i] == -1 && cherryY[i] == -1) continue;
         sprites.render(cherryX[i], cherryY[i], &cherry);
     }
 
     //Render points
-    for (int rowi = 1; rowi <= nRow; rowi++)
-    for (int coli = 1; coli <= nCol; coli++)
-        if (!isEateanPoint[rowi][coli])
-            sprites.render(pointX[rowi][coli], pointY[rowi][coli], &point);
+    for (int rowi = 1; rowi <= NUMBER_ROW; rowi++)
+        for (int coli = 1; coli <= NUMBER_COL; coli++)
+            if (!isEateanPoint[rowi][coli])
+                sprites.render(pointX[rowi][coli], pointY[rowi][coli], &point);
 
     //Render Pacman
     pacman.render();
 
     //Render Ghosts
     for (int i = 1; i <= 4; i++)
-        if (ghost[i].timeDeath == -1)
-            ghost[i].render(i - 1);
+        if (ghosts[i].timeDeath == -1)
+            ghosts[i].render(i - 1);
 
     //Score
     SDL_Color textColor = { 255, 255, 255 };
@@ -68,21 +67,21 @@ void resetEverything()
     frames = 0;
     Score = 0;
 
-    //Reset ghost and pacman
+    //Reset ghosts and pacman
     pacman.reset();
-	pacman.direct = 0;
+    pacman.direct = 0;
     pacman.Lives = 3;
-	pacman.eatCherry = false;
+    pacman.eatCherry = false;
     pacman.timeEatCherry = 0;
 
-    for (int i = 1; i <= numberGhosts; i++)
-        ghost[i].resetGhost();
+    for (int i = 1; i <= NUMBER_GHOSTS; i++)
+        ghosts[i].resetGhost();
 
     //Play opening music
     RenderGame();
     Mix_PlayChannel(1, opening, 0);
-    while(Mix_Playing(1) != 0)
-    {
+
+    while (Mix_Playing(1) != 0) {
         SDL_Delay(200);
     }
 

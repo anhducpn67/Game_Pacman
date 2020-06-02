@@ -43,24 +43,28 @@ class Pacman
 		//Handle keyboard's events
 		void handleEvent( SDL_Event& e );
 
-		//Moves Pacman
-        void move( SDL_Rect wall[], int numbers_Wall);
+    //Moves Pacman
+    void move(SDL_Rect wall[], int numbers_Wall);
 
-		//Shows Pacman on the screen
-		void render();
+    //Shows Pacman on the screen
+    void render();
 
-		//Pacman's collision box
-        SDL_Rect mCollider;
+    //Pacman's collision box
+    SDL_Rect mCollider;
 
-    private:
-		//The X and Y offsets of Pacman
-		int mPosX, mPosY;
+    void doEatCherry();
 
-		//The velocity of the Pacman
-		int mVelX, mVelY;
+private:
+    //The X and Y offsets of Pacman
+    int mPosX, mPosY;
+
+    //The velocity of the Pacman
+    int mVelX, mVelY;
 
     friend int Ghost::directChasing();
+
     friend void Ghost::handleEvent();
+    
     friend int Ghost::directRunAway();
 };
 
