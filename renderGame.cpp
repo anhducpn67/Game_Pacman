@@ -113,10 +113,14 @@ void isPlayAgain(bool& quit)
                 }
             }
         }
-        //Clear screen
         SDL_SetRenderDrawColor( gRenderer, 0, 0, 0, 255 );
         SDL_RenderClear( gRenderer );
         gameOver.render(0, 0);
+        SDL_Color textColor = { 255, 255, 255 };
+        Text.loadFromRenderedText("Press Y to play again!", textColor);
+        Text.render(250, 620);
+        Text.loadFromRenderedText("Press N to exit game!", textColor);
+        Text.render(250, 700);
         SDL_RenderPresent( gRenderer );
     }
 }

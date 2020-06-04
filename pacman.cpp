@@ -244,6 +244,7 @@ void Pacman::render()
         {
             Mix_PlayMusic( theme, -1 );
             framesDeath = 0;
+            pacman.Lives -= 1;
             pacman.isDead = false;
             pacman.reset();
         }

@@ -84,7 +84,7 @@ void Motion_Collision(bool& quit)
                 {
                     Mix_HaltMusic();
                     Mix_PlayChannel(-1, die, 0);
-                    pacman.Lives -= 1;
+                    //pacman.Lives -= 1;
                     pacman.isDead = true;
                     for (int ghostIndex = 0; ghostIndex < NUMBER_GHOSTS; ghostIndex++) {
                         ghosts[ghostIndex].startTiredTime = 0;
@@ -172,10 +172,10 @@ void Motion_Collision(bool& quit)
         frames = 0;
     }
 
-        if (pacman.Lives == -1)
-        {
-            quit = true;
-        }
+    if (pacman.Lives == 0)
+    {
+        quit = true;
+    }
 }
 
 //Event handler
@@ -193,5 +193,4 @@ void handleEvent(bool &quit)
         //Handle input for Pacman
         pacman.handleEvent( e );
     }
-
 }
